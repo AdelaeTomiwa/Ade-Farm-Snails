@@ -7,6 +7,7 @@ import { Provider } from './data/Context';
 
 // Importing Components
 import Home from './components/pages/home/Home';
+import Footer from './components/layout/Footer';
 
 function App() {
    return (
@@ -16,6 +17,7 @@ function App() {
                <Switch>
                   <Route exact path='/' component={Home} />
                </Switch>
+               <Footer />
             </React.Fragment>
          </Router>
       </Provider>
