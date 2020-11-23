@@ -9,7 +9,6 @@ class Product extends Component {
       fetch('/data/products.json')
          .then((res) => res.json())
          .then((data) => {
-            console.log(data);
             data.map((item) => {
                if (item.id == this.props.match.params.id) {
                   this.setState({ product: item });

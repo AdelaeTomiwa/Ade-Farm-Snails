@@ -2,13 +2,49 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
 import Logo from '../../../img/logo.png';
+import SpecialOccasions from '../../layout/SpecialOccasions';
+import Address from './Address';
 
 class Content extends Component {
    state = {
-      noOfKilos: 3000,
+      noOfKilos: 1,
+      proceedCheckout: false,
+      firstName: '',
+      lastName: '',
+      mobile: '',
+      address: '',
+      state: '',
+      city: '',
+      country: '',
    };
+
+   handleChange = (e) => {
+      this.setState({ noOfKilos: e.target.value });
+   };
+
+   handleInputChange = (input) => (e) => {
+      this.setState({ [input]: e.target.value });
+   };
+
+   // handleChange = (input) => (e) => {
+   //    this.setState({ [input]: e.target.value });
+   // };
+
+   proceedCheckout = () => {
+      this.setState({ proceedCheckout: !this.state.proceedCheckout });
+   };
+
    render() {
       const { aboutDish, img, unitPrice, name, ingredients } = this.props;
+      const {
+         firstName,
+         lastName,
+         mobile,
+         address,
+         state,
+         city,
+         country,
+      } = this.state;
       return (
          <div className='product'>
             <header>
@@ -86,25 +122,63 @@ class Content extends Component {
                                  <label htmlFor='kilos'>
                                     <span>No of Kilos:</span>
                                  </label>
-                                 <input
-                                    type='text'
-                                    name='Number of Kilos'
-                                    id='kilos'
-                                    required
-                                    value={this.state.noOfKilos}
-                                 />
+                                 <div className='select'>
+                                    <select
+                                       name='Number of Kilos'
+                                       value={this.state.noOfKilos}
+                                       id='kilos'
+                                       onChange={this.handleChange}
+                                    >
+                                       <option value='1'>1</option>
+                                       <option value='2'>2</option>
+                                       <option value='3'>3</option>
+                                       <option value='4'>4</option>
+                                       <option value='5'>5</option>
+                                       <option value='6'>6</option>
+                                       <option value='7'>7</option>
+                                       <option value='8'>8</option>
+                                       <option value='9'>9</option>
+                                       <option value='10'>10</option>
+                                    </select>
+                                 </div>
                               </div>
+
                               <small>
-                                 Note:At ade farm snail, we sell our products by
-                                 kilo not by quantity. This is to your best
+                                 Note: At Ade Farm Snails, We sell our products
+                                 by kilo not by quantity. This is to your best
                                  interest and also ours
                               </small>
                            </div>
                         </div>
-                        <button className='btn btn-light'>
-                           Proceed to CheckOut
-                        </button>
+                        <div className='proceed-btn'>
+                           <button
+                              onClick={this.proceedCheckout}
+                              className='btn btn-light'
+                           >
+                              Proceed to Checkout
+                           </button>
+                        </div>
                      </div>
+                  </div>
+               </div>
+               <div className='proceed'>
+                  <div className='address-section'>
+                     <Address
+                        name={name}
+                        firstName={firstName}
+                        lastName={lastName}
+                        mobile={mobile}
+                        address={address}
+                        state={state}
+                        city={city}
+                        country={country}
+                        handleChange={this.handleInputChange}
+                     />
+                  </div>
+               </div>
+               <div>
+                  <div className='container'>
+                     <SpecialOccasions />
                   </div>
                </div>
             </main>

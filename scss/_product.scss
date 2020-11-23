@@ -100,11 +100,29 @@
                   h5 {
                      text-align: left;
                      font-size: 1.2rem;
-                     margin-top: 1rem;
+                     margin-top: 0.5rem;
                   }
 
                   p {
                      margin: 0.5rem 0;
+                  }
+
+                  .kilos {
+                     display: flex;
+                     margin: 0.3rem 0;
+
+                     select {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                        appearance: none;
+                        outline: none;
+                        border: none;
+                        padding: 0.2rem 1rem;
+                        margin-left: 0.1rem;
+                        background: $primary-color;
+                        color: $light-color;
+                        cursor: pointer;
+                     }
                   }
 
                   // .kilos {
@@ -169,6 +187,17 @@
                   //       transform: translateX(0%);
                   //    }
                   // }
+               }
+            }
+            .proceed-btn {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               width: 100%;
+               margin: 1rem 0;
+
+               button {
+                  text-transform: uppercase;
                }
             }
          }

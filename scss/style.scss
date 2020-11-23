@@ -78,6 +78,24 @@ header {
    }
 }
 
+.special-occasion {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   padding: 0.5rem 0 1.5rem 0;
+
+   h3 {
+      color: $primary-color;
+   }
+
+   p {
+      width: 80%;
+      margin: 0.5rem auto;
+      text-align: center;
+   }
+}
+
 footer {
    background-color: $primary-color;
    color: $light-color;
