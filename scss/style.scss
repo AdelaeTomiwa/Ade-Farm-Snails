@@ -1,6 +1,9 @@
 @import 'config';
 @import 'utilities';
 @import 'home';
+@import 'about';
+@import 'contact';
+@import 'product';
 
 * {
    margin: 0;
@@ -99,6 +102,7 @@ footer {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            text-align: center;
             flex: 1;
 
             li {

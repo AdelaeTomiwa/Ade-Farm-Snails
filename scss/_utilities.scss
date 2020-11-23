@@ -17,6 +17,10 @@ a {
    text-decoration: none;
 }
 
+.text-primary {
+   color: $primary-color;
+}
+
 .btn {
    color: $light-color;
    font-size: 1.3rem;
