@@ -21,6 +21,12 @@ a {
    color: $primary-color;
 }
 
+.lead {
+   background-color: lighten($primary-color, 5%);
+   color: $light-color;
+   padding: 0.5rem 1rem;
+}
+
 .btn {
    color: $light-color;
    font-size: 1.3rem;

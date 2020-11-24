@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
 import Logo from '../../../img/logo.png';
 import SpecialOccasions from '../../layout/SpecialOccasions';
 import Address from './Address';
+import Confirm from './confirmDetails/Confirm';
+import OrderSummary from './OrderSummary';
+import PaymentDetails from './PaymentDetails';
 
 class Content extends Component {
    state = {
       noOfKilos: 1,
       proceedCheckout: false,
+      proceedPayment: false,
+      proceedNextStep: false,
       firstName: '',
       lastName: '',
       mobile: '',
@@ -16,6 +20,8 @@ class Content extends Component {
       state: '',
       city: '',
       country: '',
+      totalPrice: '',
+      cardName: '',
    };
 
    handleChange = (e) => {
@@ -26,12 +32,40 @@ class Content extends Component {
       this.setState({ [input]: e.target.value });
    };
 
-   // handleChange = (input) => (e) => {
-   //    this.setState({ [input]: e.target.value });
-   // };
+   handleCardChange = (input) => (e) => {
+      this.setState({ [input]: e.target.value });
+   };
+
+   handleCardSubmit = (e) => {
+      e.preventDefault();
+      this.setState({ proceedNextStep: true });
+   };
 
    proceedCheckout = () => {
-      this.setState({ proceedCheckout: !this.state.proceedCheckout });
+      this.setState({ proceedCheckout: true });
+   };
+
+   displayCheckout = () => {
+      return {
+         display: this.state.proceedCheckout ? 'block' : 'none',
+      };
+   };
+
+   handleInputFields = (e) => {
+      e.preventDefault();
+      this.setState({ proceedPayment: true });
+   };
+
+   displayPayment = () => {
+      return {
+         display: this.state.proceedPayment ? 'block' : 'none',
+      };
+   };
+
+   displayConfirmation = () => {
+      return {
+         display: this.state.proceedNextStep ? 'block' : 'none',
+      };
    };
 
    render() {
@@ -44,6 +78,8 @@ class Content extends Component {
          state,
          city,
          country,
+         noOfKilos,
+         cardName,
       } = this.state;
       return (
          <div className='product'>
@@ -106,7 +142,7 @@ class Content extends Component {
                         </div>
                      </div>
                   </div>
-                  <div className='item-summary'>
+                  <div className='item-summary' id='item-summary'>
                      <div className='container'>
                         <h4>Item</h4>
                         <div className='item-content'>
@@ -116,7 +152,9 @@ class Content extends Component {
                            <div className='item-details'>
                               <h5>{name}</h5>
                               <p>
-                                 <strong>Unit Price: {unitPrice}</strong>
+                                 <strong>
+                                    Unit Price: &#x20a6;{unitPrice}
+                                 </strong>
                               </p>
                               <div className='kilos'>
                                  <label htmlFor='kilos'>
@@ -162,8 +200,50 @@ class Content extends Component {
                   </div>
                </div>
                <div className='proceed'>
-                  <div className='address-section'>
-                     <Address
+                  <div
+                     // style={this.displayCheckout()}
+                     className='address-section'
+                  >
+                     <div className='container'>
+                        <Address
+                           name={name}
+                           firstName={firstName}
+                           lastName={lastName}
+                           mobile={mobile}
+                           address={address}
+                           state={state}
+                           city={city}
+                           country={country}
+                           handleChange={this.handleInputChange}
+                           handleInputFields={this.handleInputFields}
+                        />
+                     </div>
+                  </div>
+                  <div
+                     // style={this.displayPayment()}
+                     className='payment-section'
+                  >
+                     <OrderSummary
+                        name={name}
+                        img={img}
+                        unitPrice={unitPrice}
+                        noOfKilos={noOfKilos}
+                     />
+                     <PaymentDetails
+                        firstName={firstName}
+                        lastName={lastName}
+                        noOfKilos={noOfKilos}
+                        unitPrice={unitPrice}
+                        cardName={cardName}
+                        handleCardChange={this.handleCardChange}
+                        handleCardSubmit={this.handleCardSubmit}
+                     />
+                  </div>
+                  <div
+                     // style={this.displayConfirmation()}
+                     className='confirm-section'
+                  >
+                     <Confirm
                         name={name}
                         firstName={firstName}
                         lastName={lastName}
@@ -172,7 +252,10 @@ class Content extends Component {
                         state={state}
                         city={city}
                         country={country}
-                        handleChange={this.handleInputChange}
+                        img={img}
+                        unitPrice={unitPrice}
+                        noOfKilos={noOfKilos}
+                        cardName={cardName}
                      />
                   </div>
                </div>

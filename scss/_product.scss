@@ -74,7 +74,6 @@
             background-color: lighten($primary-color, 5%);
             color: $light-color;
             padding: 1rem 0;
-            margin: 1rem 0;
 
             h4 {
                text-align: center;
@@ -124,69 +123,6 @@
                         cursor: pointer;
                      }
                   }
-
-                  // .kilos {
-                  //    width: 40%;
-                  //    // background-color: red;
-                  //    position: relative;
-                  //    height: 50px;
-                  //    overflow: hidden;
-
-                  //    input {
-                  //       width: 100%;
-                  //       height: 100%;
-                  //       border: none;
-                  //       background: none;
-                  //       color: $light-color;
-                  //       padding-top: 20px;
-                  //       outline: none;
-                  //    }
-
-                  //    label {
-                  //       position: absolute;
-                  //       bottom: 0;
-                  //       left: 0;
-                  //       width: 100%;
-                  //       height: 100%;
-                  //       font-size: 14px;
-                  //       // background-color: lightcoral;
-                  //       border-bottom: 1px solid $black-color;
-                  //       pointer-events: none;
-                  //    }
-
-                  //    label::after {
-                  //       content: '';
-                  //       position: absolute;
-                  //       left: 0;
-                  //       bottom: -1;
-                  //       height: 100%;
-                  //       width: 100%;
-                  //       border-bottom: 3px solid $light-color;
-                  //       transform: translateX(-100%);
-                  //       @include easeOut;
-                  //    }
-
-                  //    label {
-                  //       span {
-                  //          position: absolute;
-                  //          bottom: 5px;
-                  //          left: 0px;
-                  //          @include easeOut;
-                  //       }
-                  //    }
-
-                  //    input:focus + label span,
-                  //    input:valid + label span {
-                  //       transform: translateY(-150%);
-                  //       font-size: 12px;
-                  //       color: red;
-                  //    }
-
-                  //    input:focus + label:after,
-                  //    input:valid + label:after {
-                  //       transform: translateX(0%);
-                  //    }
-                  // }
                }
             }
             .proceed-btn {
@@ -199,6 +135,311 @@
                button {
                   text-transform: uppercase;
                }
+            }
+         }
+      }
+
+      .proceed {
+         .address-section {
+            padding: 1rem 0;
+
+            .address {
+               h4 {
+                  text-align: center;
+                  color: $primary-color;
+                  text-transform: uppercase;
+               }
+
+               .form {
+                  border: 2px solid lighten($primary-color, 10%);
+                  padding: 1rem 1.5rem;
+                  margin: 1rem 0;
+                  width: 100%;
+                  form {
+                     overflow: hidden;
+                     h5 {
+                        text-transform: uppercase;
+                        color: $primary-color;
+                        margin: 0 0 0.5rem 0;
+                     }
+
+                     div {
+                        position: relative;
+                        margin: 0.5rem 0;
+                        height: 50px;
+                        input {
+                           width: 100%;
+                           font-size: 1rem;
+                           overflow: hidden;
+
+                           height: 100%;
+                           border: none;
+                           background: none;
+
+                           padding-top: 20px;
+                        }
+
+                        label {
+                           position: absolute;
+                           bottom: 0;
+                           left: 0;
+                           width: 100%;
+                           height: 100%;
+                           pointer-events: none;
+                           border-bottom: 1px solid $black-color;
+                           font-size: 15px;
+
+                           &:after {
+                              content: '';
+                              position: absolute;
+                              left: 0;
+                              bottom: -1;
+                              height: 100%;
+                              width: 100%;
+                              border-bottom: 2px solid $primary-color;
+                              transform: translateX(-100%);
+                              @include easeOut;
+                           }
+
+                           span {
+                              position: absolute;
+                              bottom: 0px;
+                              left: 0px;
+                              @include easeOut;
+                           }
+                        }
+
+                        input:focus + label span,
+                        input:valid + label span {
+                           transform: translateY(-120%);
+                           font-size: 13px;
+                           color: $primary-color;
+                        }
+
+                        input:focus + label:after,
+                        input:valid + label:after {
+                           transform: translateX(0%);
+                        }
+                     }
+                  }
+               }
+            }
+
+            .proceed-btn {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               width: 100%;
+            }
+         }
+
+         .payment-section {
+            .order-summary {
+               padding: 1.5rem 0;
+               color: $light-color;
+               background-color: lighten($primary-color, 5%);
+
+               h4 {
+                  text-align: center;
+                  margin-bottom: 0.5rem;
+                  text-transform: uppercase;
+               }
+
+               .summary-content {
+                  display: flex;
+                  align-items: flex-start;
+                  justify-content: flex-start;
+
+                  .summary-img {
+                     img {
+                        width: 150px;
+                        height: 150px;
+                     }
+                  }
+
+                  .summary-details {
+                     margin-left: 2rem;
+
+                     h5 {
+                        text-align: left;
+                        font-size: 1.2rem;
+                        margin-top: 0.5rem;
+                     }
+
+                     p {
+                        margin: 0.5rem 0;
+                     }
+
+                     .kilos {
+                        display: flex;
+                        margin: 0.3rem 0;
+
+                        select {
+                           -webkit-appearance: none;
+                           -moz-appearance: none;
+                           appearance: none;
+                           outline: none;
+                           border: none;
+                           padding: 0.2rem 1rem;
+                           margin-left: 0.1rem;
+                           background: $primary-color;
+                           color: $light-color;
+                           cursor: pointer;
+                        }
+                     }
+                  }
+               }
+
+               .btns {
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 0.5rem;
+               }
+            }
+         }
+
+         .payment-details {
+            padding: 1.5rem 0;
+            text-transform: uppercase;
+
+            .wrapper {
+               padding: 0 1.5rem;
+               border: 2px solid lighten($primary-color, 10%);
+
+               h5 {
+                  color: $primary-color;
+                  margin: 1rem 0;
+               }
+
+               .table {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin: 1rem 0;
+                  // padding: 1rem 1.5rem;
+                  text-align: center;
+
+                  .acc-num {
+                     flex: 2;
+                     border: 2px solid lighten($primary-color, 10%);
+                     margin: 0 0.2rem;
+                  }
+
+                  .bank {
+                     flex: 1;
+                     border: 2px solid lighten($primary-color, 10%);
+                     margin: 0 0.2rem;
+                  }
+
+                  .acc-name {
+                     flex: 1;
+                     border: 2px solid lighten($primary-color, 10%);
+                     margin: 0 0.2rem;
+                  }
+
+                  .content {
+                     h5 {
+                        color: $dark-color;
+                        margin-top: 0.5rem;
+                        border-bottom: 2px solid lighten($primary-color, 10%);
+                     }
+
+                     h5:last-child {
+                        border-bottom: none;
+                     }
+                  }
+               }
+
+               .card-name {
+                  margin-bottom: 1rem;
+                  form {
+                     overflow: hidden;
+
+                     div {
+                        position: relative;
+                        margin: 0.5rem 0;
+                        height: 50px;
+                        input {
+                           width: 100%;
+                           font-size: 1rem;
+                           overflow: hidden;
+
+                           height: 100%;
+                           border: none;
+                           background: none;
+
+                           padding-top: 20px;
+                        }
+
+                        label {
+                           position: absolute;
+                           bottom: 0;
+                           left: 0;
+                           width: 100%;
+                           height: 100%;
+                           pointer-events: none;
+                           border-bottom: 1px solid $black-color;
+                           font-size: 15px;
+                           text-transform: none;
+
+                           &:after {
+                              content: '';
+                              position: absolute;
+                              left: 0;
+                              bottom: -1;
+                              height: 100%;
+                              width: 100%;
+                              border-bottom: 2px solid $primary-color;
+                              transform: translateX(-100%);
+                              @include easeOut;
+                           }
+
+                           span {
+                              position: absolute;
+                              bottom: 0px;
+                              left: 0px;
+                              @include easeOut;
+                           }
+                        }
+
+                        input:focus + label span,
+                        input:valid + label span {
+                           transform: translateY(-120%);
+                           font-size: 13px;
+                           color: $primary-color;
+                        }
+
+                        input:focus + label:after,
+                        input:valid + label:after {
+                           transform: translateX(0%);
+                        }
+                     }
+
+                     .proceed-btn {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        margin: 1rem 0 0 0;
+                     }
+                  }
+               }
+            }
+         }
+
+         .confirm-section {
+            padding: 1rem 0;
+
+            .confirm-container {
+               // display: none;
+               border: 2px solid lighten($primary-color, 10%);
+            }
+
+            .confirm-address {
+               // background-color: red;
+               background-color: lightcoral;
+               margin: 1rem 0;
+               padding: 1rem;
             }
          }
       }

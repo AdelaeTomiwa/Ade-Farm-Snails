@@ -53,7 +53,7 @@ class Home extends Component {
                         </div>
                      </header>
                      <main>
-                        <div className='showcase'>
+                        <div className='showcase' id='show'>
                            <img src={ShowcaseImg} alt='Snail' />
                            <div className='intro'>
                               <h1>
