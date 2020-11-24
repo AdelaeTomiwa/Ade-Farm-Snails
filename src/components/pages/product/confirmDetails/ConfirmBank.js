@@ -1,24 +1,16 @@
 import React, { Component } from 'react';
 import { Link, animateScroll as scroll } from 'react-scroll';
 
-class ConfirmAddress extends Component {
+class ConfirmBank extends Component {
    render() {
-      const {
-         firstName,
-         lastName,
-         state,
-         address,
-         mobile,
-         city,
-         country,
-      } = this.props;
+      const { cardName } = this.props;
       return (
-         <div className='confirm-address-details'>
+         <div className='confirm-bank-details'>
             <div className='head'>
-               <h5>Address Details</h5>
+               <h5>Bank Details</h5>
                <Link
                   activeClass='active'
-                  to='address'
+                  to='payment-details'
                   spy={true}
                   smooth={true}
                   offset={-70}
@@ -30,17 +22,11 @@ class ConfirmAddress extends Component {
                </Link>
             </div>
             <div className='content'>
-               <h5>
-                  {firstName} {lastName}
-               </h5>
-               <p>
-                  {address}, {state}, {city}, {country}
-               </p>
-               <p>{mobile}</p>
+               <h5>Card Holder Name: {cardName}</h5>
             </div>
          </div>
       );
    }
 }
 
-export default ConfirmAddress;
+export default ConfirmBank;

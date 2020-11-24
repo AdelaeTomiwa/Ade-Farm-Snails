@@ -97,9 +97,9 @@ class Home extends Component {
                               </div>
                            </div>
                         </div>
-                        {/* <div className='slide-show'>
+                        <div className='slide-show'>
                            <SlideShow />
-                        </div> */}
+                        </div>
                         <div className='place-order'>
                            <Link to='order-now'>
                               <button className='btn btn-primary'>

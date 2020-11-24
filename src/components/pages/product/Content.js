@@ -6,6 +6,7 @@ import Address from './Address';
 import Confirm from './confirmDetails/Confirm';
 import OrderSummary from './OrderSummary';
 import PaymentDetails from './PaymentDetails';
+import SlideShow from './SlideShow';
 
 class Content extends Component {
    state = {
@@ -13,6 +14,7 @@ class Content extends Component {
       proceedCheckout: false,
       proceedPayment: false,
       proceedNextStep: false,
+      showSlide: false,
       firstName: '',
       lastName: '',
       mobile: '',
@@ -38,7 +40,7 @@ class Content extends Component {
 
    handleCardSubmit = (e) => {
       e.preventDefault();
-      this.setState({ proceedNextStep: true });
+      this.setState({ proceedNextStep: true, showSlide: true });
    };
 
    proceedCheckout = () => {
@@ -65,6 +67,12 @@ class Content extends Component {
    displayConfirmation = () => {
       return {
          display: this.state.proceedNextStep ? 'block' : 'none',
+      };
+   };
+
+   displaySlide = () => {
+      return {
+         display: this.state.showSlide ? 'block' : 'none',
       };
    };
 
@@ -201,7 +209,7 @@ class Content extends Component {
                </div>
                <div className='proceed'>
                   <div
-                     // style={this.displayCheckout()}
+                     style={this.displayCheckout()}
                      className='address-section'
                   >
                      <div className='container'>
@@ -220,7 +228,7 @@ class Content extends Component {
                      </div>
                   </div>
                   <div
-                     // style={this.displayPayment()}
+                     style={this.displayPayment()}
                      className='payment-section'
                   >
                      <OrderSummary
@@ -240,7 +248,7 @@ class Content extends Component {
                      />
                   </div>
                   <div
-                     // style={this.displayConfirmation()}
+                     style={this.displayConfirmation()}
                      className='confirm-section'
                   >
                      <Confirm
@@ -258,6 +266,10 @@ class Content extends Component {
                         cardName={cardName}
                      />
                   </div>
+               </div>
+
+               <div style={this.displaySlide()} className='slide-show'>
+                  <SlideShow />
                </div>
                <div>
                   <div className='container'>

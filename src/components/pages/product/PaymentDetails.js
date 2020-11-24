@@ -12,12 +12,13 @@ class PaymentDetails extends Component {
          handleCardSubmit,
       } = this.props;
       return (
-         <div className='payment-details'>
+         <div className='payment-details' id='payment-details'>
             <div className='container'>
                <div className='wrapper'>
                   <h5>Payment Details</h5>
                   <div className='lead'>
                      Dear {firstName} {lastName}, Please transfer the total of{' '}
+                     &#x20a6;
                      {unitPrice * noOfKilos} to either of the provided Bank
                      Account
                   </div>

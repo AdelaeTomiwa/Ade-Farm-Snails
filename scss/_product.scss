@@ -230,6 +230,10 @@
                align-items: center;
                justify-content: center;
                width: 100%;
+
+               button {
+                  text-transform: uppercase;
+               }
             }
          }
 
@@ -321,19 +325,19 @@
 
                   .acc-num {
                      flex: 2;
-                     border: 2px solid lighten($primary-color, 10%);
+                     border: 1px solid lighten($primary-color, 15%);
                      margin: 0 0.2rem;
                   }
 
                   .bank {
                      flex: 1;
-                     border: 2px solid lighten($primary-color, 10%);
+                     border: 1px solid lighten($primary-color, 15%);
                      margin: 0 0.2rem;
                   }
 
                   .acc-name {
                      flex: 1;
-                     border: 2px solid lighten($primary-color, 10%);
+                     border: 1px solid lighten($primary-color, 15%);
                      margin: 0 0.2rem;
                   }
 
@@ -341,7 +345,7 @@
                      h5 {
                         color: $dark-color;
                         margin-top: 0.5rem;
-                        border-bottom: 2px solid lighten($primary-color, 10%);
+                        border-bottom: 1px solid lighten($primary-color, 15%);
                      }
 
                      h5:last-child {
@@ -421,6 +425,10 @@
                         justify-content: center;
                         width: 100%;
                         margin: 1rem 0 0 0;
+
+                        button {
+                           text-transform: uppercase;
+                        }
                      }
                   }
                }
@@ -428,19 +436,211 @@
          }
 
          .confirm-section {
-            padding: 1rem 0;
-
+            margin: 1rem 0;
             .confirm-container {
-               // display: none;
-               border: 2px solid lighten($primary-color, 10%);
-            }
+               .confirm-details {
+                  padding: 1rem 1.5rem;
+                  border: 2px solid lighten($primary-color, 10%);
 
-            .confirm-address {
-               // background-color: red;
-               background-color: lightcoral;
-               margin: 1rem 0;
-               padding: 1rem;
+                  h5 {
+                     color: $primary-color;
+                     text-transform: uppercase;
+                  }
+
+                  .lead {
+                     margin: 0.5rem 0 0 0;
+                  }
+
+                  .confirm-address {
+                     border: 1px solid lighten($primary-color, 15%);
+                     margin: 1rem 0;
+                     padding: 0.5rem 1rem;
+
+                     &-details {
+                        .head {
+                           display: flex;
+                           align-items: center;
+                           justify-content: space-between;
+                           padding: 0.5rem 0;
+                           border-bottom: 1px solid lighten($primary-color, 15%);
+
+                           h5 {
+                              font-size: 0.9rem;
+                           }
+                           a {
+                              padding: 0 1rem;
+                              cursor: pointer;
+                           }
+                        }
+
+                        .content {
+                           padding: 0.5rem 0;
+                           text-transform: capitalize;
+                           h5 {
+                              font-size: 0.9rem;
+                              text-transform: capitalize;
+                           }
+
+                           p {
+                              font-size: 0.8rem;
+                           }
+                        }
+                     }
+                  }
+               }
+
+               .confirm-ordered {
+                  border: 1px solid lighten($primary-color, 15%);
+                  margin: 1rem 0;
+                  padding: 0.5rem 1rem;
+
+                  &-details {
+                     .head {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0.5rem 0;
+                        border-bottom: 1px solid lighten($primary-color, 15%);
+
+                        h5 {
+                           font-size: 0.9rem;
+                        }
+                        a {
+                           padding: 0 1rem;
+                           cursor: pointer;
+                        }
+                     }
+
+                     .content {
+                        display: flex;
+                        align-items: flex-start;
+                        justify-content: flex-start;
+
+                        .ordered-img {
+                           width: 120px;
+                           height: 120px;
+                           img {
+                              width: 100%;
+                              height: 100%;
+                           }
+                        }
+
+                        .ordered-content {
+                           margin-left: 2rem;
+                        }
+                        padding: 0.5rem 0;
+                        text-transform: capitalize;
+                        h5 {
+                           font-size: 0.9rem;
+                           text-transform: capitalize;
+                           margin: 0.5rem 0;
+                        }
+
+                        p {
+                           font-size: 0.8rem;
+                           margin: 0.5rem 0;
+                        }
+
+                        .total {
+                           margin: 0.5rem 0;
+                           font-size: 0.9rem;
+                        }
+                     }
+                  }
+               }
+
+               .confirm-bank {
+                  border: 1px solid lighten($primary-color, 15%);
+                  margin: 1rem 0;
+                  padding: 0.5rem 1rem;
+
+                  &-details {
+                     .head {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        padding: 0.5rem 0;
+                        border-bottom: 1px solid lighten($primary-color, 15%);
+
+                        h5 {
+                           font-size: 0.9rem;
+                        }
+                        a {
+                           padding: 0 1rem;
+                           cursor: pointer;
+                        }
+                     }
+
+                     .content {
+                        h5 {
+                           font-size: 0.9rem;
+                           text-transform: capitalize;
+                           margin: 0.5rem 0;
+                        }
+                     }
+                  }
+               }
             }
+            .proceed-btn {
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               width: 100%;
+               margin: 1rem 0;
+
+               button {
+                  text-transform: uppercase;
+               }
+            }
+         }
+      }
+   }
+}
+
+.slide-show {
+   width: 100%;
+   background-color: $primary-color;
+   padding: 1rem 0;
+
+   .slide {
+      height: 350px;
+      width: 350px;
+      padding: 0 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+      cursor: pointer;
+
+      h4 {
+         color: $light-color;
+         position: absolute;
+         z-index: 2;
+         top: 0%;
+         left: 0%;
+         text-align: center;
+         background-color: $dark-color;
+         width: 100%;
+         height: 100%;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         opacity: 0;
+         pointer-events: none;
+         @include easeOut;
+      }
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         pointer-events: none;
+      }
+
+      &:hover {
+         h4 {
+            opacity: 0.7;
          }
       }
    }
