@@ -56,7 +56,7 @@ class PaymentDetails extends Component {
                         <div>
                            <input
                               type='text'
-                              name='CardName'
+                              name='cardName'
                               value={cardName}
                               onChange={handleCardChange('cardName')}
                               required

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Content from './Content';
+import Content from './content/Content';
 
 class Product extends Component {
    state = {

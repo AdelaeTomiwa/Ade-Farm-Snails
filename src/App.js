@@ -24,7 +24,11 @@ function App() {
                   <Route exact path='/' component={Home} />
                   <Route exact path='/about-us' component={About} />
                   <Route exact path='/contact' component={Contact} />
-                  <Route exact path='/products/order/:id' component={Product} />
+                  <Route
+                     exact
+                     path='/products/order/:name/:id'
+                     component={Product}
+                  />
                </Switch>
                <Footer />
             </React.Fragment>

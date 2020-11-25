@@ -3,11 +3,14 @@ import { Link } from 'react-scroll';
 
 class ConfirmOrder extends Component {
    render() {
-      const { img, unitPrice, noOfKilos, name } = this.props;
+      const { img, unitPrice, noOfKilos, totalPrice, name } = this.props;
       return (
          <div className='confirm-ordered-details'>
             <div className='head'>
-               <h5>Ordered Item</h5>
+               <div>
+                  <i className='fas fa-check'></i>
+                  <h5>Ordered Item</h5>
+               </div>
                <Link
                   activeClass='active'
                   to='item-summary'
@@ -30,12 +33,12 @@ class ConfirmOrder extends Component {
                   <p>&#x20a6;{unitPrice}</p>
                   <p>No of Kilos: {noOfKilos}</p>
                   <p className='total'>
-                     <strong>
-                        Total:{' '}
-                        <span className='text-primary'>
-                           &#x20a6;{unitPrice * noOfKilos}
-                        </span>
-                     </strong>
+                     <strong>Total: &#x20a6;</strong>
+                     <input
+                        type='text'
+                        defaultValue={totalPrice}
+                        name='totalPrice'
+                     />
                   </p>
                </div>
             </div>

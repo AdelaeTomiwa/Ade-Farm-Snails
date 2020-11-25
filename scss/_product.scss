@@ -1,697 +1,3 @@
-// .product-page {
-//    .product {
-//       .showcase {
-//          position: relative;
-//          width: 100%;
-//          height: 65vh;
-
-//          &::after {
-//             content: '';
-//             position: absolute;
-//             top: 0%;
-//             left: 0%;
-//             width: 100%;
-//             height: 100%;
-//             background-color: rgba($black-color, 0.7);
-//             z-index: 1;
-//          }
-
-//          img {
-//             width: 100%;
-//             height: 100%;
-//             object-fit: cover;
-//             // z-index: -2;
-//             pointer-events: none;
-//          }
-
-//          .intro {
-//             position: absolute;
-//             top: 50%;
-//             left: 50%;
-//             transform: translate(-50%, -50%);
-//             display: flex;
-//             align-items: flex-end;
-//             justify-content: center;
-//             flex-direction: column;
-//             text-align: center;
-//             z-index: 2;
-//             h1 {
-//                color: $light-color;
-//             }
-//          }
-//       }
-//       .content {
-//          .item {
-//             padding: 1.5rem 0;
-//             .item-content {
-//                display: flex;
-//                align-items: flex-start;
-//                justify-content: center;
-
-//                .item-img {
-//                   img {
-//                      width: 400px;
-//                      height: 300px;
-//                      object-fit: cover;
-//                   }
-//                }
-
-//                .item-details {
-//                   margin-left: 3rem;
-//                   display: flex;
-//                   align-items: flex-start;
-//                   justify-content: center;
-//                   flex-direction: column;
-
-//                   p {
-//                      margin: 0.5rem 0;
-//                   }
-//                }
-//             }
-//          }
-
-//          .item-summary {
-//             background-color: lighten($primary-color, 5%);
-//             color: $light-color;
-//             padding: 1rem 0;
-
-//             h4 {
-//                text-align: center;
-//                margin-bottom: 0.5rem;
-//                text-transform: uppercase;
-//             }
-
-//             .item-content {
-//                display: flex;
-//                align-items: flex-start;
-//                justify-content: flex-start;
-
-//                .item-img {
-//                   img {
-//                      width: 200px;
-//                      height: 200px;
-//                   }
-//                }
-
-//                .item-details {
-//                   margin-left: 2rem;
-
-//                   .product-name {
-//                      input {
-//                         width: 100%;
-//                         background: none;
-//                         border: none;
-//                         outline: none;
-//                         pointer-events: none;
-//                         color: $light-color;
-//                         font-size: 1.3rem;
-//                         text-align: left;
-//                         margin-top: 0.5rem;
-//                      }
-//                   }
-
-//                   .product-price {
-//                      display: flex;
-//                      align-items: center;
-//                      justify-content: flex-start;
-
-//                      p {
-//                         font-size: 1rem;
-//                      }
-//                      input {
-//                         // width: 100%;
-//                         background: none;
-//                         border: none;
-//                         outline: none;
-//                         pointer-events: none;
-//                         color: $light-color;
-//                         font-size: 1rem;
-//                         text-align: left;
-//                         // margin-top: 0.5rem;
-//                      }
-//                   }
-
-//                   h5 {
-//                      text-align: left;
-//                      font-size: 1.2rem;
-//                      margin-top: 0.5rem;
-//                   }
-
-//                   p {
-//                      margin: 0.5rem 0;
-//                   }
-
-//                   .kilos {
-//                      display: flex;
-//                      margin: 0.3rem 0;
-
-//                      select {
-//                         -webkit-appearance: none;
-//                         -moz-appearance: none;
-//                         appearance: none;
-//                         outline: none;
-//                         border: none;
-//                         padding: 0.2rem 1rem;
-//                         margin-left: 0.1rem;
-//                         background: $primary-color;
-//                         color: $light-color;
-//                         cursor: pointer;
-//                      }
-//                   }
-//                }
-//             }
-//             .proceed-btn {
-//                display: flex;
-//                align-items: center;
-//                justify-content: center;
-//                width: 100%;
-//                margin: 1rem 0;
-
-//                button {
-//                   text-transform: uppercase;
-//                }
-//             }
-//          }
-//       }
-
-//       .proceed {
-//          .address-section {
-//             padding: 1rem 0;
-
-//             .address {
-//                h4 {
-//                   text-align: center;
-//                   color: $primary-color;
-//                   text-transform: uppercase;
-//                }
-
-//                .form {
-//                   border: 2px solid lighten($primary-color, 10%);
-//                   padding: 1rem 1.5rem;
-//                   margin: 1rem 0;
-//                   width: 100%;
-//                   form {
-//                      overflow: hidden;
-//                      h5 {
-//                         text-transform: uppercase;
-//                         color: $primary-color;
-//                         margin: 0 0 0.5rem 0;
-//                      }
-
-//                      div {
-//                         position: relative;
-//                         margin: 0.5rem 0;
-//                         height: 50px;
-//                         input {
-//                            width: 100%;
-//                            font-size: 1rem;
-//                            overflow: hidden;
-
-//                            height: 100%;
-//                            border: none;
-//                            background: none;
-
-//                            padding-top: 20px;
-//                         }
-
-//                         label {
-//                            position: absolute;
-//                            bottom: 0;
-//                            left: 0;
-//                            width: 100%;
-//                            height: 100%;
-//                            pointer-events: none;
-//                            border-bottom: 1px solid $black-color;
-//                            font-size: 15px;
-
-//                            &:after {
-//                               content: '';
-//                               position: absolute;
-//                               left: 0;
-//                               bottom: -1;
-//                               height: 100%;
-//                               width: 100%;
-//                               border-bottom: 2px solid $primary-color;
-//                               transform: translateX(-100%);
-//                               @include easeOut;
-//                            }
-
-//                            span {
-//                               position: absolute;
-//                               bottom: 0px;
-//                               left: 0px;
-//                               @include easeOut;
-//                            }
-//                         }
-
-//                         input:focus + label span,
-//                         input:valid + label span {
-//                            transform: translateY(-120%);
-//                            font-size: 13px;
-//                            color: $primary-color;
-//                         }
-
-//                         input:focus + label:after,
-//                         input:valid + label:after {
-//                            transform: translateX(0%);
-//                         }
-//                      }
-//                   }
-//                }
-//             }
-
-//             .proceed-btn {
-//                display: flex;
-//                align-items: center;
-//                justify-content: center;
-//                width: 100%;
-
-//                button {
-//                   text-transform: uppercase;
-//                }
-//             }
-//          }
-
-//          .payment-section {
-//             .order-summary {
-//                padding: 1.5rem 0;
-//                color: $light-color;
-//                background-color: lighten($primary-color, 5%);
-
-//                h4 {
-//                   text-align: center;
-//                   margin-bottom: 0.5rem;
-//                   text-transform: uppercase;
-//                }
-
-//                .summary-content {
-//                   display: flex;
-//                   align-items: flex-start;
-//                   justify-content: flex-start;
-
-//                   .summary-img {
-//                      img {
-//                         width: 150px;
-//                         height: 150px;
-//                      }
-//                   }
-
-//                   .summary-details {
-//                      margin-left: 2rem;
-
-//                      h5 {
-//                         text-align: left;
-//                         font-size: 1.2rem;
-//                         margin-top: 0.5rem;
-//                      }
-
-//                      p {
-//                         margin: 0.5rem 0;
-//                      }
-
-//                      .kilos {
-//                         display: flex;
-//                         margin: 0.3rem 0;
-
-//                         select {
-//                            -webkit-appearance: none;
-//                            -moz-appearance: none;
-//                            appearance: none;
-//                            outline: none;
-//                            border: none;
-//                            padding: 0.2rem 1rem;
-//                            margin-left: 0.1rem;
-//                            background: $primary-color;
-//                            color: $light-color;
-//                            cursor: pointer;
-//                         }
-//                      }
-//                   }
-//                }
-
-//                .btns {
-//                   display: flex;
-//                   justify-content: space-between;
-//                   margin-top: 0.5rem;
-//                }
-//             }
-//          }
-
-//          .payment-details {
-//             padding: 1.5rem 0;
-//             text-transform: uppercase;
-
-//             .wrapper {
-//                padding: 0 1.5rem;
-//                border: 2px solid lighten($primary-color, 10%);
-
-//                h5 {
-//                   color: $primary-color;
-//                   margin: 1rem 0;
-//                }
-
-//                .table {
-//                   display: flex;
-//                   align-items: center;
-//                   justify-content: space-between;
-//                   margin: 1rem 0;
-//                   // padding: 1rem 1.5rem;
-//                   text-align: center;
-
-//                   .acc-num {
-//                      flex: 2;
-//                      border: 1px solid lighten($primary-color, 15%);
-//                      margin: 0 0.2rem;
-//                   }
-
-//                   .bank {
-//                      flex: 1;
-//                      border: 1px solid lighten($primary-color, 15%);
-//                      margin: 0 0.2rem;
-//                   }
-
-//                   .acc-name {
-//                      flex: 1;
-//                      border: 1px solid lighten($primary-color, 15%);
-//                      margin: 0 0.2rem;
-//                   }
-
-//                   .content {
-//                      h5 {
-//                         color: $dark-color;
-//                         margin-top: 0.5rem;
-//                         border-bottom: 1px solid lighten($primary-color, 15%);
-//                      }
-
-//                      h5:last-child {
-//                         border-bottom: none;
-//                      }
-//                   }
-//                }
-
-//                .card-name {
-//                   margin-bottom: 1rem;
-//                   form {
-//                      overflow: hidden;
-
-//                      div {
-//                         position: relative;
-//                         margin: 0.5rem 0;
-//                         height: 50px;
-//                         input {
-//                            width: 100%;
-//                            font-size: 1rem;
-//                            overflow: hidden;
-
-//                            height: 100%;
-//                            border: none;
-//                            background: none;
-
-//                            padding-top: 20px;
-//                         }
-
-//                         label {
-//                            position: absolute;
-//                            bottom: 0;
-//                            left: 0;
-//                            width: 100%;
-//                            height: 100%;
-//                            pointer-events: none;
-//                            border-bottom: 1px solid $black-color;
-//                            font-size: 15px;
-//                            text-transform: none;
-
-//                            &:after {
-//                               content: '';
-//                               position: absolute;
-//                               left: 0;
-//                               bottom: -1;
-//                               height: 100%;
-//                               width: 100%;
-//                               border-bottom: 2px solid $primary-color;
-//                               transform: translateX(-100%);
-//                               @include easeOut;
-//                            }
-
-//                            span {
-//                               position: absolute;
-//                               bottom: 0px;
-//                               left: 0px;
-//                               @include easeOut;
-//                            }
-//                         }
-
-//                         input:focus + label span,
-//                         input:valid + label span {
-//                            transform: translateY(-120%);
-//                            font-size: 13px;
-//                            color: $primary-color;
-//                         }
-
-//                         input:focus + label:after,
-//                         input:valid + label:after {
-//                            transform: translateX(0%);
-//                         }
-//                      }
-
-//                      .proceed-btn {
-//                         display: flex;
-//                         align-items: center;
-//                         justify-content: center;
-//                         width: 100%;
-//                         margin: 1rem 0 0 0;
-
-//                         button {
-//                            text-transform: uppercase;
-//                         }
-//                      }
-//                   }
-//                }
-//             }
-//          }
-
-//          .confirm-section {
-//             margin: 1rem 0;
-//             .confirm-container {
-//                .confirm-details {
-//                   padding: 1rem 1.5rem;
-//                   border: 2px solid lighten($primary-color, 10%);
-
-//                   h5 {
-//                      color: $primary-color;
-//                      text-transform: uppercase;
-//                   }
-
-//                   .lead {
-//                      margin: 0.5rem 0 0 0;
-//                   }
-
-//                   .confirm-address {
-//                      border: 1px solid lighten($primary-color, 15%);
-//                      margin: 1rem 0;
-//                      padding: 0.5rem 1rem;
-
-//                      &-details {
-//                         .head {
-//                            display: flex;
-//                            align-items: center;
-//                            justify-content: space-between;
-//                            padding: 0.5rem 0;
-//                            border-bottom: 1px solid lighten($primary-color, 15%);
-
-//                            h5 {
-//                               font-size: 0.9rem;
-//                            }
-//                            a {
-//                               padding: 0 1rem;
-//                               cursor: pointer;
-//                            }
-//                         }
-
-//                         .content {
-//                            padding: 0.5rem 0;
-//                            text-transform: capitalize;
-
-//                            // .person-name {
-//                            //    display: flex;
-//                            //    input {
-//                            //       pointer-events: none;
-//                            //       border: none;
-//                            //       // width: 5%;
-//                            //       font-size: 0.9rem;
-//                            //       font-weight: bold;
-//                            //    }
-//                            // }
-//                            h5 {
-//                               font-size: 0.9rem;
-//                               text-transform: capitalize;
-//                            }
-
-//                            p {
-//                               font-size: 0.8rem;
-//                            }
-//                         }
-//                      }
-//                   }
-//                }
-
-//                .confirm-ordered {
-//                   border: 1px solid lighten($primary-color, 15%);
-//                   margin: 1rem 0;
-//                   padding: 0.5rem 1rem;
-
-//                   &-details {
-//                      .head {
-//                         display: flex;
-//                         align-items: center;
-//                         justify-content: space-between;
-//                         padding: 0.5rem 0;
-//                         border-bottom: 1px solid lighten($primary-color, 15%);
-
-//                         h5 {
-//                            font-size: 0.9rem;
-//                         }
-//                         a {
-//                            padding: 0 1rem;
-//                            cursor: pointer;
-//                         }
-//                      }
-
-//                      .content {
-//                         display: flex;
-//                         align-items: flex-start;
-//                         justify-content: flex-start;
-
-//                         .ordered-img {
-//                            width: 120px;
-//                            height: 120px;
-//                            img {
-//                               width: 100%;
-//                               height: 100%;
-//                            }
-//                         }
-
-//                         .ordered-content {
-//                            margin-left: 2rem;
-//                         }
-//                         padding: 0.5rem 0;
-//                         text-transform: capitalize;
-//                         h5 {
-//                            font-size: 0.9rem;
-//                            text-transform: capitalize;
-//                            margin: 0.5rem 0;
-//                         }
-
-//                         p {
-//                            font-size: 0.8rem;
-//                            margin: 0.5rem 0;
-//                         }
-
-//                         .total {
-//                            margin: 0.5rem 0;
-//                            font-size: 0.9rem;
-//                         }
-//                      }
-//                   }
-//                }
-
-//                .confirm-bank {
-//                   border: 1px solid lighten($primary-color, 15%);
-//                   margin: 1rem 0;
-//                   padding: 0.5rem 1rem;
-
-//                   &-details {
-//                      .head {
-//                         display: flex;
-//                         align-items: center;
-//                         justify-content: space-between;
-//                         padding: 0.5rem 0;
-//                         border-bottom: 1px solid lighten($primary-color, 15%);
-
-//                         h5 {
-//                            font-size: 0.9rem;
-//                         }
-//                         a {
-//                            padding: 0 1rem;
-//                            cursor: pointer;
-//                         }
-//                      }
-
-//                      .content {
-//                         h5 {
-//                            font-size: 0.9rem;
-//                            text-transform: capitalize;
-//                            margin: 0.5rem 0;
-//                         }
-//                      }
-//                   }
-//                }
-//             }
-//             .proceed-btn {
-//                display: flex;
-//                align-items: center;
-//                justify-content: center;
-//                width: 100%;
-//                margin: 1rem 0;
-
-//                button {
-//                   text-transform: uppercase;
-//                }
-//             }
-//          }
-//       }
-//    }
-// }
-
-// .slide-show {
-//    width: 100%;
-//    background-color: $primary-color;
-//    padding: 1rem 0;
-
-//    .slide {
-//       height: 350px;
-//       width: 350px;
-//       padding: 0 5px;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       flex-direction: column;
-//       position: relative;
-//       cursor: pointer;
-
-//       h4 {
-//          color: $light-color;
-//          position: absolute;
-//          z-index: 2;
-//          top: 0%;
-//          left: 0%;
-//          text-align: center;
-//          background-color: $dark-color;
-//          width: 100%;
-//          height: 100%;
-//          display: flex;
-//          align-items: center;
-//          justify-content: center;
-//          opacity: 0;
-//          pointer-events: none;
-//          @include easeOut;
-//       }
-
-//       img {
-//          width: 100%;
-//          height: 100%;
-//          object-fit: cover;
-//          pointer-events: none;
-//       }
-
-//       &:hover {
-//          h4 {
-//             opacity: 0.7;
-//          }
-//       }
-//    }
-// }
-
 .product-page {
    .product {
       .showcase {
@@ -1192,6 +498,21 @@
                            padding: 0.5rem 0;
                            border-bottom: 1px solid lighten($primary-color, 15%);
 
+                           div {
+                              display: flex;
+                              align-items: center;
+                              justify-content: center;
+
+                              i {
+                                 background-color: $primary-color;
+                                 color: $light-color;
+                                 font-size: 0.5rem;
+                                 margin-right: 0.5rem;
+                                 padding: 0.3rem;
+                                 border-radius: 50%;
+                              }
+                           }
+
                            h5 {
                               font-size: 0.9rem;
                            }
@@ -1241,6 +562,21 @@
                         padding: 0.5rem 0;
                         border-bottom: 1px solid lighten($primary-color, 15%);
 
+                        div {
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+
+                           i {
+                              background-color: $primary-color;
+                              color: $light-color;
+                              font-size: 0.5rem;
+                              margin-right: 0.5rem;
+                              padding: 0.3rem;
+                              border-radius: 50%;
+                           }
+                        }
+
                         h5 {
                            font-size: 0.9rem;
                         }
@@ -1283,6 +619,13 @@
                         .total {
                            margin: 0.5rem 0;
                            font-size: 0.9rem;
+
+                           input {
+                              pointer-events: none;
+                              border: none;
+                              font-size: 0.9rem;
+                              font-weight: bold;
+                           }
                         }
                      }
                   }
@@ -1300,6 +643,20 @@
                         justify-content: space-between;
                         padding: 0.5rem 0;
                         border-bottom: 1px solid lighten($primary-color, 15%);
+                        div {
+                           display: flex;
+                           align-items: center;
+                           justify-content: center;
+
+                           i {
+                              background-color: $primary-color;
+                              color: $light-color;
+                              font-size: 0.5rem;
+                              margin-right: 0.5rem;
+                              padding: 0.3rem;
+                              border-radius: 50%;
+                           }
+                        }
 
                         h5 {
                            font-size: 0.9rem;

@@ -7,7 +7,10 @@ class ConfirmBank extends Component {
       return (
          <div className='confirm-bank-details'>
             <div className='head'>
-               <h5>Bank Details</h5>
+               <div>
+                  <i className='fas fa-check'></i>
+                  <h5>Bank Details</h5>
+               </div>
                <Link
                   activeClass='active'
                   to='payment-details'

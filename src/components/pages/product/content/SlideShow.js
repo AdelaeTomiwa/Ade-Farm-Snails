@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import Slider from 'infinite-react-carousel';
 
 // Importing Images
-import Fresh from '../../../img/fresh.jpg';
-import Oven from '../../../img/oven.jpg';
-import PepperedOne from '../../../img/peppered-1.jpg';
-import Grilled from '../../../img/grilled.jpg';
-import PepperedTwo from '../../../img/peppered-2.jpg';
+import Fresh from '../../../../img/fresh.jpg';
+import Oven from '../../../../img/oven.jpg';
+import PepperedOne from '../../../../img/peppered-1.jpg';
+import Grilled from '../../../../img/grilled.jpg';
+import PepperedTwo from '../../../../img/peppered-2.jpg';
 
 class SlideShow extends Component {
    render() {

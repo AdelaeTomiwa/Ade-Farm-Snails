@@ -17,6 +17,7 @@ export default class Confirm extends Component {
          img,
          unitPrice,
          noOfKilos,
+         totalPrice,
          cardName,
       } = this.props;
 
@@ -44,6 +45,7 @@ export default class Confirm extends Component {
                            name={name}
                            img={img}
                            unitPrice={unitPrice}
+                           totalPrice={totalPrice}
                         />
                      </div>
                      <div className='confirm-bank'>

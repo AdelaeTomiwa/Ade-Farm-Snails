@@ -11,7 +11,7 @@ const Product = ({ name, aboutDish, img, id }) => {
             <div className='content'>
                <h3>{name}</h3>
                <p>{aboutDish}</p>
-               <Link to={`products/order/${id}`}>
+               <Link to={`products/order/${name}/${id}`}>
                   <button className='btn-primary'>Order Now</button>
                </Link>
             </div>
