@@ -9,7 +9,7 @@ class PaymentDetails extends Component {
          noOfKilos,
          cardName,
          handleCardChange,
-         handleCardSubmit,
+         proceedNextStep,
       } = this.props;
       return (
          <div className='payment-details' id='payment-details'>
@@ -52,7 +52,7 @@ class PaymentDetails extends Component {
                      </div>
                   </div>
                   <div className='card-name'>
-                     <form onSubmit={handleCardSubmit}>
+                     <div className='card-form'>
                         <div>
                            <input
                               type='text'
@@ -65,12 +65,12 @@ class PaymentDetails extends Component {
                               <span>Card&apos;s Holder Name</span>
                            </label>
                         </div>
-                        <div className='proceed-btn'>
-                           <button type='submit' className='btn btn-primary'>
+                        <div className='proceed-btn' onClick={proceedNextStep}>
+                           <div className='btn btn-primary'>
                               Proceed To Next Step
-                           </button>
+                           </div>
                         </div>
-                     </form>
+                     </div>
                   </div>
                </div>
             </div>

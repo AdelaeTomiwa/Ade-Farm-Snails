@@ -49,11 +49,6 @@ export default class Confirm extends Component {
                      <div className='confirm-bank'>
                         <ConfirmBank cardName={cardName} />
                      </div>
-                     <div className='proceed-btn'>
-                        <button type='submit' className='btn btn-primary'>
-                           Confirm Order
-                        </button>
-                     </div>
                   </div>
                </div>
             </div>

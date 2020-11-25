@@ -59,7 +59,7 @@ class Home extends Component {
                               <h1>
                                  Snails for{' '}
                                  <span>
-                                    {/* <Typical
+                                    <Typical
                                        steps={[
                                           'Pleasure',
                                           2000,
@@ -72,7 +72,7 @@ class Home extends Component {
                                        ]}
                                        loop={Infinity}
                                        wrapper='b'
-                                    /> */}
+                                    />
                                  </span>
                               </h1>
                               <Link to='/order-now'>
@@ -97,7 +97,9 @@ class Home extends Component {
                               </div>
                            </div>
                         </div>
-                        <div className='slide-show'>{/* <SlideShow /> */}</div>
+                        <div className='slide-show'>
+                           <SlideShow />
+                        </div>
                         <div className='place-order'>
                            <Link to='order-now'>
                               <button className='btn btn-primary'>
