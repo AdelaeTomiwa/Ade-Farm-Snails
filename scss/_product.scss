@@ -96,6 +96,41 @@
                .item-details {
                   margin-left: 2rem;
 
+                  .product-name {
+                     input {
+                        width: 100%;
+                        background: none;
+                        border: none;
+                        outline: none;
+                        pointer-events: none;
+                        color: $light-color;
+                        font-size: 1.3rem;
+                        text-align: left;
+                        margin-top: 0.5rem;
+                     }
+                  }
+
+                  .product-price {
+                     display: flex;
+                     align-items: center;
+                     justify-content: flex-start;
+
+                     p {
+                        font-size: 1rem;
+                     }
+                     input {
+                        // width: 100%;
+                        background: none;
+                        border: none;
+                        outline: none;
+                        pointer-events: none;
+                        color: $light-color;
+                        font-size: 1rem;
+                        text-align: left;
+                        // margin-top: 0.5rem;
+                     }
+                  }
+
                   h5 {
                      text-align: left;
                      font-size: 1.2rem;
@@ -476,6 +511,17 @@
                         .content {
                            padding: 0.5rem 0;
                            text-transform: capitalize;
+
+                           // .person-name {
+                           //    display: flex;
+                           //    input {
+                           //       pointer-events: none;
+                           //       border: none;
+                           //       // width: 5%;
+                           //       font-size: 0.9rem;
+                           //       font-weight: bold;
+                           //    }
+                           // }
                            h5 {
                               font-size: 0.9rem;
                               text-transform: capitalize;

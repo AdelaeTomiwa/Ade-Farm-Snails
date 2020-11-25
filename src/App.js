@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './css/style.css';
+import { Helmet } from 'react-helmet';
 
 // Importing Context
 import { Provider } from './data/Context';

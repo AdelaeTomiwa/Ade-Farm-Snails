@@ -17,7 +17,7 @@ class Address extends Component {
          <div className='address' id='address'>
             <h4>{name}</h4>
             <div className='form'>
-               <form onSubmit={handleInputFields}>
+               <form>
                   <h5>Address Details</h5>
                   <div>
                      <input
@@ -103,10 +103,13 @@ class Address extends Component {
                         <span>Country</span>
                      </label>
                   </div>
-                  <div className='proceed-btn'>
-                     <button type='submit' className='btn btn-primary'>
+                  {/* <div className='proceed-btn'>
+                     <button className='btn btn-primary'>
                         Proceed To Payment
                      </button>
+                  </div> */}
+                  <div onClick={handleInputFields}>
+                     <div className='btn btn-primary'>Proceed To Payment</div>
                   </div>
                </form>
             </div>
