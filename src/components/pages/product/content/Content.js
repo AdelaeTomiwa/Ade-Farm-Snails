@@ -331,6 +331,8 @@ import Confirm from './confirmDetails/Confirm';
 
 import SlideShow from './SlideShow';
 
+import Spinner from '../../../layout/Spinner';
+
 import SpecialOccasion from '../../../layout/SpecialOccasions';
 import SuccessOrder from '../success/SuccessOrder';
 
@@ -353,11 +355,11 @@ class Content extends Component {
       proceedNextStep: false,
       showSlide: false,
       showConfirm: false,
+      emailResult: false,
    };
 
    // No Of Kilos
    handleKilosChange = (e) => {
-      console.log(this.props.unitPrice);
       this.setState({
          noOfKilos: e.target.value,
       });
@@ -448,6 +450,10 @@ class Content extends Component {
       };
    };
 
+   deterSpinner = (e) => {
+      this.setState({ emailResult: true });
+   };
+
    // Handle Form Submit
    handleOrderSubmit = (e) => {
       e.preventDefault();
@@ -462,7 +468,7 @@ class Content extends Component {
          )
          .then(
             (result) => {
-               this.setState({ showConfirm: true });
+               this.setState({ showConfirm: true, emailResult: false });
                console.log(result.text);
             },
             (error) => {
@@ -470,6 +476,11 @@ class Content extends Component {
             }
          );
       e.target.reset();
+   };
+   showSpinner = () => {
+      return {
+         display: this.state.emailResult ? 'block' : 'none',
+      };
    };
 
    render() {
@@ -628,10 +639,13 @@ class Content extends Component {
                            totalPrice={totalPrice}
                            cardName={cardName}
                         />
-                        <div className='submit-btn'>
+                        <div className='submit-btn' onClick={this.deterSpinner}>
                            <button type='submit' className='btn btn-primary'>
                               Confirm Order
                            </button>
+                        </div>
+                        <div style={this.showSpinner()}>
+                           <Spinner />
                         </div>
                      </div>
                   </form>

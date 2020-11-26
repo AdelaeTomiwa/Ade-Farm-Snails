@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
 import Logo from '../../../img/logo.png';
 import ShowcaseImg from '../../../img/peppered-3.jpg';
 
 function About() {
+   useEffect(() => {
+      document.title = 'Ade Farm Snails | About';
+   }, []);
    return (
       <div className='about-page'>
-         <Helmet>
-            <title>Nested Title</title>
-            <meta name='description' content='Nested component' />
-         </Helmet>
          <header>
             <div className='container'>
                <div className='header'>
@@ -23,19 +21,19 @@ function About() {
                   <nav className='nav'>
                      <ul>
                         <li>
-                           <Link to='about-us'>About Us</Link>
+                           <Link to='/about-us'>About Us</Link>
                         </li>
                         <li>
-                           <Link to='our-products'>Our Products</Link>
+                           <Link to='/our-products'>Our Products</Link>
                         </li>
                         <li>
-                           <Link to='farm'>Our Farm</Link>
+                           <Link to='/farm'>Our Farm</Link>
                         </li>
                         <li>
-                           <Link to='contact'>Contact Us</Link>
+                           <Link to='/contact'>Contact Us</Link>
                         </li>
                         <li className='order-now'>
-                           <Link to='order-now'>Order Now</Link>
+                           <Link to='/order-now'>Order Now</Link>
                         </li>
                      </ul>
                   </nav>
@@ -80,27 +78,23 @@ function About() {
                      <h3>Our Products</h3>
                      <p>
                         We provide you with delicious snail meals such as{' '}
-                        <Link>
+                        <Link to='products/order/Grilled and Peppered Snail/1'>
                            <span className='text-primary'>
-                              Grilled Snail Garnished with Cameron Pepper
+                              Grilled and Peppered Snail
                            </span>
                         </Link>
                         ,{' '}
-                        <Link>
-                           <span className='text-primary'>Grilled Snail</span>
-                        </Link>
-                        ,{' '}
-                        <Link>
-                           <span className='text-primary'>Fresh Snail</span>
-                        </Link>
-                        ,{' '}
-                        <Link>
+                        <Link to='products/order/Oven Dried Snail/2'>
                            <span className='text-primary'>
                               Oven Dried Snail
                            </span>
-                        </Link>{' '}
-                        and{' '}
-                        <Link>
+                        </Link>
+                        ,{' '}
+                        <Link to='products/order/Fresh Snail/3'>
+                           <span className='text-primary'>Fresh Snail</span>
+                        </Link>
+                        , and{' '}
+                        <Link to='products/order/Live Snail/4'>
                            <span className='text-primary'>Live Snail</span>
                         </Link>
                         . We are capable of delivering any amount of snails to

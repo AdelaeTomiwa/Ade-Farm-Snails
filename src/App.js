@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './css/style.css';
-import { Helmet } from 'react-helmet';
 
 // Importing Context
 import { Provider } from './data/Context';
@@ -14,6 +13,8 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import Contact from './components/pages/contact/Contact';
 import Product from './components/pages/product/Product';
 
+import Notifications from './components/layout/Notifications';
+
 function App() {
    return (
       <Provider>
@@ -21,16 +22,17 @@ function App() {
             <ScrollToTop />
             <React.Fragment>
                <Switch>
-                  <Route exact path='/' component={Home} />
+                  {/* <Route exact path='/' component={Home} />
                   <Route exact path='/about-us' component={About} />
                   <Route exact path='/contact' component={Contact} />
                   <Route
                      exact
                      path='/products/order/:name/:id'
                      component={Product}
-                  />
+                  /> */}
+                  <Notifications />
                </Switch>
-               <Footer />
+               {/* <Footer /> */}
             </React.Fragment>
          </Router>
       </Provider>

@@ -14,6 +14,9 @@ import ShowcaseImg from '../../../img/peppered-3.jpg';
 import Product from './Product';
 
 class Home extends Component {
+   componentDidMount() {
+      document.title = 'Ade Farm Snails';
+   }
    render() {
       return (
          <Consumer>

@@ -12,7 +12,7 @@ class Product extends Component {
             data.map((item) => {
                if (item.id == this.props.match.params.id) {
                   this.setState({ product: item });
-                  return '';
+                  document.title = `Ade Farm Snails | ${this.state.product.name}`;
                } else {
                   return '';
                }

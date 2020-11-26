@@ -1,17 +1,15 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-// import { Helmet } from 'react-helmet';
 
 import Logo from '../../../img/logo.png';
 import ShowcaseImg from '../../../img/peppered-3.jpg';
 
 function Contact() {
+   useEffect(() => {
+      document.title = 'Ade Farm Snails | Contact Us';
+   }, []);
    return (
       <div className='contact-page'>
-         {/* <Helmet>
-            <title>My Title</title>
-            <meta name='description' content='Helmet application' />
-         </Helmet> */}
          <header>
             <div className='container'>
                <div className='header'>
