@@ -13,7 +13,7 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import Contact from './components/pages/contact/Contact';
 import Product from './components/pages/product/Product';
 
-import Notifications from './components/layout/Notifications';
+// import Notifications, { notify } from './components/layout/Notifications';
 
 function App() {
    return (
@@ -22,17 +22,17 @@ function App() {
             <ScrollToTop />
             <React.Fragment>
                <Switch>
-                  {/* <Route exact path='/' component={Home} />
+                  <Route exact path='/' component={Home} />
                   <Route exact path='/about-us' component={About} />
                   <Route exact path='/contact' component={Contact} />
                   <Route
                      exact
                      path='/products/order/:name/:id'
                      component={Product}
-                  /> */}
-                  <Notifications />
+                  />
                </Switch>
-               {/* <Footer /> */}
+               {/* <Notifications /> */}
+               <Footer />
             </React.Fragment>
          </Router>
       </Provider>

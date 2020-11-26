@@ -9,7 +9,9 @@ class Product extends Component {
       fetch('/data/products.json')
          .then((res) => res.json())
          .then((data) => {
+            // eslint-disable-next-line
             data.map((item) => {
+               // eslint-disable-next-line
                if (item.id == this.props.match.params.id) {
                   this.setState({ product: item });
                   document.title = `Ade Farm Snails | ${this.state.product.name}`;

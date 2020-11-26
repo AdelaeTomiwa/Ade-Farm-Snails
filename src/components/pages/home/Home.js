@@ -13,16 +13,20 @@ import ShowcaseImg from '../../../img/peppered-3.jpg';
 
 import Product from './Product';
 
+import RefreshPage from '../../layout/RefreshPage';
+
 class Home extends Component {
    componentDidMount() {
       document.title = 'Ade Farm Snails';
    }
+
    render() {
       return (
          <Consumer>
             {(value) => {
                return (
                   <div className='home-page'>
+                     {value.reloadHomePage ? <RefreshPage /> : ''}
                      <header>
                         <div className='container'>
                            <div className='header'>
@@ -61,7 +65,7 @@ class Home extends Component {
                            <div className='intro'>
                               <h1>
                                  Snails for{' '}
-                                 <span>
+                                 {/* <span>
                                     <Typical
                                        steps={[
                                           'Pleasure',
@@ -76,7 +80,7 @@ class Home extends Component {
                                        loop={Infinity}
                                        wrapper='b'
                                     />
-                                 </span>
+                                 </span> */}
                               </h1>
                               <Link to='/order-now'>
                                  <button className='btn-primary'>
@@ -100,9 +104,7 @@ class Home extends Component {
                               </div>
                            </div>
                         </div>
-                        <div className='slide-show'>
-                           <SlideShow />
-                        </div>
+                        <div className='slide-show'>{/* <SlideShow /> */}</div>
                         <div className='place-order'>
                            <Link to='order-now'>
                               <button className='btn btn-primary'>
