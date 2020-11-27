@@ -12,8 +12,7 @@ import Footer from './components/layout/Footer';
 import ScrollToTop from './components/layout/ScrollToTop';
 import Contact from './components/pages/contact/Contact';
 import Product from './components/pages/product/Product';
-
-// import Notifications, { notify } from './components/layout/Notifications';
+import OurProducts from './components/pages/ourProducts/OurProducts';
 
 function App() {
    return (
@@ -30,8 +29,8 @@ function App() {
                      path='/products/order/:name/:id'
                      component={Product}
                   />
+                  <Route path='/our-products' component={OurProducts} />
                </Switch>
-               {/* <Notifications /> */}
                <Footer />
             </React.Fragment>
          </Router>
