@@ -13,6 +13,7 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import Contact from './components/pages/contact/Contact';
 import Product from './components/pages/product/Product';
 import OurProducts from './components/pages/ourProducts/OurProducts';
+import OrderNow from './components/pages/ordernow/OrderNow';
 
 function App() {
    return (
@@ -30,6 +31,7 @@ function App() {
                      component={Product}
                   />
                   <Route path='/our-products' component={OurProducts} />
+                  <Route path='/order-now' component={OrderNow} />
                </Switch>
                <Footer />
             </React.Fragment>

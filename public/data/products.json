@@ -2,36 +2,48 @@
    {
       "id": 1,
       "name": "Grilled and Peppered Snail",
+      "urlName":"grilledAndPepperedSnail",
       "unitPrice": "1200",
       "aboutDish": "We bring back a favorite family: Grilled and Peppered Snail! It is an extra-large serving of protein food. That is enough for dinner tonight—and maybe even a wonderful appetizer while you are going to bed.",
       "img": "https://i.pinimg.com/originals/6c/13/cb/6c13cb091ded4bfe140b4cf10611937c.jpg",
-      "ingredients": "Snail, Onion, Cameron Pepper"
+      "ingredients": "Snail, Onion, Cameron Pepper",
+      "noOfKilos":"1",
+      "subTotal": ""
    },
    {
       "id": 2,
       "name": "Oven Dried Snail",
-      "unitPrice": "1200",
+      "urlName":"ovenDriedSnail",
+      "unitPrice": "200",
       "aboutDish": "The oven dried snail provides sufficient satisfaction to the body and mouth. It keeps the chin going for a certain amount of time and releases the sugar from the sky into the lungs.",
       "img": "https://static-uc.olist.ng/upload/20200728/12v65zagie4h.jpg",
-      "ingredients": "Snail, Onion, Cameron Pepper"
+      "ingredients": "Snail, Onion, Cameron Pepper",
+      "noOfKilos":"1",
+      "subTotal": ""
 
    },
    {
       "id": 3,
       "name": "Fresh Snail",
-      "unitPrice": "1200",
+      "urlName":"freshSnail",
+      "unitPrice": "1290",
       "aboutDish": "Fresh, clean and parboiled snail is available through us. This offers the chance to prepare the snail in your own preferred manner and procedure.",
       "img": "https://sc01.alicdn.com/kf/UTB8CzTxQXfFXKJk43Otq6xIPFXaR.jpg",
-      "ingredients": "Snail, Onion, Cameron Pepper"
+      "ingredients": "Snail, Onion, Cameron Pepper",
+      "noOfKilos":"1",
+      "subTotal": ""
 
    },
    {
       "id": 4,
       "name": "Live Snail",
-      "unitPrice": "1200",
+      "urlName":"liveSnail",
+      "unitPrice": "5200",
       "aboutDish": "We bring back a favorite family: Grilled and Peppered Snail! It is an extra-large serving of protein food. That is enough for dinner tonight—and maybe even a wonderful appetizer while you are going to bed.",
       "img": "https://images.pexels.com/photos/924394/pexels-photo-924394.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-      "ingredients": "Snail, Onion, Cameron Pepper"
+      "ingredients": "Snail, Onion, Cameron Pepper",
+      "noOfKilos":"1",
+      "subTotal": ""
 
    }
 ]

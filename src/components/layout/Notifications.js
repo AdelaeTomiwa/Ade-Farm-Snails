@@ -2,17 +2,17 @@ import React, { Component } from 'react';
 
 class Notifications extends Component {
    notificationStyle = () => {
-      const { top } = this.props;
+      const { top, notificationType } = this.props;
       return {
-         background: '#ff220c',
+         background: notificationType === 'success' ? '#647244' : ' #ff220c',
          color: '#ffffff',
          padding: '1rem',
-         width: '50%',
+         width: '100%',
          textAlign: 'center',
          position: 'fixed',
-         opacity: '0.9',
+         opacity: '1',
          top: top,
-         right: '3%',
+         right: '0%',
          zIndex: '10',
          transition: 'all 0.5s ease-out',
       };

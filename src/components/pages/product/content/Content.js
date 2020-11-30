@@ -91,10 +91,22 @@ class Content extends Component {
          city === '' ||
          country === ''
       ) {
-         this.setState({
-            notificationTop: '3%',
-            notificationContent: 'Please enter all fields',
-         });
+         this.setState(
+            {
+               notificationTop: '0%',
+               notificationContent: 'Please enter all fields',
+            },
+            () => {
+               setTimeout(
+                  () =>
+                     this.setState({
+                        notificationTop: '-100%',
+                        notificationContent: '',
+                     }),
+                  3000
+               );
+            }
+         );
       } else {
          this.setState({
             proceedPayment: true,
@@ -119,7 +131,22 @@ class Content extends Component {
    // Proceed Next Step
    proceedNextStep = () => {
       if (this.state.cardName === '') {
-         alert('Please Enter your Card Name');
+         this.setState(
+            {
+               notificationTop: '0%',
+               notificationContent: 'Please enter your Card Details',
+            },
+            () => {
+               setTimeout(
+                  () =>
+                     this.setState({
+                        notificationTop: '-100%',
+                        notificationContent: '',
+                     }),
+                  3000
+               );
+            }
+         );
       } else {
          this.setState({
             proceedNextStep: true,
