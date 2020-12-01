@@ -28,11 +28,40 @@ body {
 header {
    background-color: $primary-color;
    padding: 0.2rem 0;
+   position: relative;
 
    .header {
       display: flex;
       align-items: center;
       justify-content: space-between;
+
+      .burger {
+         cursor: pointer;
+         position: absolute;
+         left: 3%;
+         display: none;
+         z-index: 10;
+
+         div {
+            background: $light-color;
+            margin: 0.3rem 0;
+            width: 28px;
+            height: 3px;
+            @include easeOut;
+         }
+
+         &.close {
+            .line-1 {
+               transform: rotate(45deg) translate(5px, 5px);
+            }
+            .line-2 {
+               opacity: 0;
+            }
+            .line-3 {
+               transform: rotate(-45deg) translate(6px, -6px);
+            }
+         }
+      }
 
       .logo {
          flex: 1;
@@ -42,39 +71,64 @@ header {
          }
       }
 
-      nav {
+      .nav-links {
          flex: 2;
-         ul {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 100%;
 
-            li {
-               a {
-                  font-weight: bold;
-                  color: $light-color;
-                  font-size: 16px;
-                  display: inline-block;
-                  padding: 0.5rem 1rem;
-                  @include easeOut;
+         .nav {
+            @include easeOut;
+            ul {
+               display: flex;
+               align-items: center;
+               justify-content: space-between;
+               width: 100%;
 
-                  &:hover {
-                     background-color: lighten($primary-color, 5%);
-                  }
-               }
-
-               &.order-now {
-                  background-color: $light-color;
-
+               li {
                   a {
-                     color: $primary-color;
+                     font-weight: bold;
+                     color: $light-color;
+                     font-size: 16px;
+                     display: inline-block;
+                     padding: 0.5rem 1rem;
+                     @include easeOut;
 
                      &:hover {
-                        background-color: darken($light-color, 5%);
+                        background-color: lighten($primary-color, 5%);
+                     }
+                  }
+
+                  &.order-now {
+                     background-color: $light-color;
+
+                     a {
+                        color: $primary-color;
+
+                        &:hover {
+                           background-color: darken($light-color, 5%);
+                        }
                      }
                   }
                }
+               .home-mobile {
+                  display: none;
+               }
+            }
+         }
+      }
+
+      .order-now.mobile {
+         background-color: $light-color;
+         display: none;
+
+         a {
+            font-weight: bold;
+            color: $primary-color;
+            font-size: 16px;
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            @include easeOut;
+
+            &:hover {
+               background-color: lighten($primary-color, 5%);
             }
          }
       }
@@ -150,5 +204,8 @@ footer {
       display: flex;
       align-items: center;
       justify-content: center;
+      text-align: center;
    }
 }
+
+@import 'mobile';

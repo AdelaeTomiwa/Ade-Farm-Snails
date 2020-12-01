@@ -16,9 +16,17 @@ import Product from './Product';
 import RefreshPage from '../../layout/RefreshPage';
 
 class Home extends Component {
-   componentDidMount() {
-      document.title = 'Ade Farm Snails';
-   }
+   state = {
+      openNav: false,
+   };
+
+   toggleNav = () => {
+      this.setState({ openNav: !this.state.openNav });
+   };
+
+   closeNav = () => {
+      this.setState({ openNav: !this.state.openNav });
+   };
 
    render() {
       return (
@@ -30,32 +38,58 @@ class Home extends Component {
                      <header>
                         <div className='container'>
                            <div className='header'>
+                              <div
+                                 onClick={this.toggleNav}
+                                 className={
+                                    this.state.openNav
+                                       ? 'burger close'
+                                       : 'burger'
+                                 }
+                              >
+                                 <div className='line-1'></div>
+                                 <div className='line-2'></div>
+                                 <div className='line-3'></div>
+                              </div>
                               <div className='logo'>
                                  <Link to='/'>
                                     <img src={Logo} alt='Ade Farm Snail' />
                                  </Link>
                               </div>
-                              <nav className='nav'>
-                                 <ul>
-                                    <li>
-                                       <Link to='about-us'>About Us</Link>
-                                    </li>
-                                    <li>
-                                       <Link to='our-products'>
-                                          Our Products
-                                       </Link>
-                                    </li>
-                                    <li>
-                                       <Link to='farm'>Our Farm</Link>
-                                    </li>
-                                    <li>
-                                       <Link to='contact'>Contact Us</Link>
-                                    </li>
-                                    <li className='order-now'>
-                                       <Link to='order-now'>Order Now</Link>
-                                    </li>
-                                 </ul>
+                              <nav
+                                 className={
+                                    this.state.openNav
+                                       ? 'nav-links open'
+                                       : 'nav-links'
+                                 }
+                              >
+                                 <div className='nav'>
+                                    <ul>
+                                       <li className='home-mobile'>
+                                          <Link to='/'>Home</Link>
+                                       </li>
+                                       <li>
+                                          <Link to='/about-us'>About Us</Link>
+                                       </li>
+                                       <li>
+                                          <Link to='/our-products'>
+                                             Our Products
+                                          </Link>
+                                       </li>
+                                       <li>
+                                          <Link to='/farm'>Our Farm</Link>
+                                       </li>
+                                       <li>
+                                          <Link to='/contact'>Contact Us</Link>
+                                       </li>
+                                       <li className='order-now'>
+                                          <Link to='/order-now'>Order Now</Link>
+                                       </li>
+                                    </ul>
+                                 </div>
                               </nav>
+                              <li className='order-now mobile'>
+                                 <Link to='/order-now'>Order Now</Link>
+                              </li>
                            </div>
                         </div>
                      </header>
@@ -65,7 +99,7 @@ class Home extends Component {
                            <div className='intro'>
                               <h1>
                                  Snails for{' '}
-                                 {/* <span>
+                                 <span>
                                     <Typical
                                        steps={[
                                           'Pleasure',
@@ -80,7 +114,7 @@ class Home extends Component {
                                        loop={Infinity}
                                        wrapper='b'
                                     />
-                                 </span> */}
+                                 </span>
                               </h1>
                               <Link to='/order-now'>
                                  <button className='btn-primary'>
@@ -104,7 +138,9 @@ class Home extends Component {
                               </div>
                            </div>
                         </div>
-                        <div className='slide-show'>{/* <SlideShow /> */}</div>
+                        <div className='slide-show'>
+                           <SlideShow />
+                        </div>
                         <div className='place-order'>
                            <Link to='order-now'>
                               <button className='btn btn-primary'>

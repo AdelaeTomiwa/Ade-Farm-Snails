@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-
+import ScrollToTop from '../../layout/ScrollToTop';
 import Logo from '../../../img/logo.png';
-import ShowcaseImg from '../../../img/peppered-3.jpg';
 
-export default class Contact extends Component {
+import ShowcaseImg from '../../../img/peppered-2.jpg';
+
+class SuccessOrder extends Component {
    state = {
       openNav: false,
    };
-
    toggleNav = () => {
       this.setState({ openNav: !this.state.openNav });
    };
@@ -16,10 +16,12 @@ export default class Contact extends Component {
    closeNav = () => {
       this.setState({ openNav: !this.state.openNav });
    };
-
    render() {
+      const { firstName, lastName, mobile, email } = this.props;
+
       return (
-         <div className='contact-page'>
+         <div className='success-page'>
+            <ScrollToTop />
             <header>
                <div className='container'>
                   <div className='header'>
@@ -74,32 +76,58 @@ export default class Contact extends Component {
             </header>
             <main>
                <div className='showcase'>
-                  <img src={ShowcaseImg} alt='Snail' />
+                  <img src={ShowcaseImg} alt='Snails' />
                   <div className='intro'>
-                     <h1>Contact Us</h1>
+                     <h1>Ade Farm Snails</h1>
                   </div>
                </div>
                <div className='content'>
                   <div className='container'>
-                     <div className='contact'>
-                        <h5>
-                           Do you have a special occasion where you need as many
-                           snail as possible? or do you have difficulty placing
-                           your order, please call us on the following number
-                        </h5>
-                        <h3>
+                     <h3>Success</h3>
+
+                     <div className='success-message'>
+                        <h4>
+                           Dear{' '}
                            <span className='text-primary'>
-                              +(234) 9098 870-9973
+                              {firstName} {lastName}
                            </span>
-                        </h3>
-                        <h5>Or</h5>
-                        <h3>
-                           Email us @
-                           <span className='text-primary'>
-                              westminsterfarmltd@gmail.com
-                           </span>
-                        </h3>
+                           ,
+                        </h4>
+                        <p>
+                           Thank you for shopping with{' '}
+                           <strong className='text-primary'>
+                              Ade Farm Snails!
+                           </strong>{' '}
+                           Your orders has been successfully confirmed.{' '}
+                           <span className='text-primary'>Ade Farm Snails</span>{' '}
+                           has sent you an email on{' '}
+                           <strong className='text-primary'>{email}</strong> and
+                           will contact you shortly on{' '}
+                           <strong className='text-primary'>
+                              {mobile} when the payment has been confirmed
+                           </strong>
+                           .
+                        </p>
                      </div>
+                     <div className='enquires'>
+                        <h4>For More Enquires</h4>
+                        <Link to='/contact'>
+                           <h5>
+                              <span className='text-primary'>
+                                 Contact us now
+                              </span>
+                           </h5>
+                        </Link>
+                     </div>
+
+                     <Link to='/'>
+                        <h5>
+                           <span className='text-primary'>
+                              <i className='fas fa-arrow-left'></i> Back to Home
+                              Page
+                           </span>
+                        </h5>
+                     </Link>
                   </div>
                </div>
             </main>
@@ -107,3 +135,5 @@ export default class Contact extends Component {
       );
    }
 }
+
+export default SuccessOrder;

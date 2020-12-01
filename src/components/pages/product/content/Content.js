@@ -41,6 +41,7 @@ class Content extends Component {
       notificationTop: '-100%',
       notificationContent: '',
       formConfirmed: false,
+      openNav: false,
    };
 
    // No Of Kilos
@@ -48,6 +49,14 @@ class Content extends Component {
       this.setState({
          noOfKilos: e.target.value,
       });
+   };
+
+   toggleNav = () => {
+      this.setState({ openNav: !this.state.openNav });
+   };
+
+   closeNav = () => {
+      this.setState({ openNav: !this.state.openNav });
    };
 
    // Proceed to First Check Out
@@ -190,11 +199,24 @@ class Content extends Component {
                this.setState({ showSuccess: true, emailResult: false });
             },
             (error) => {
-               this.setState({
-                  notificationTop: '3%',
-                  notificationContent: 'An error Occurred, Please try again',
-                  emailResult: false,
-               });
+               this.setState(
+                  {
+                     notificationTop: '0%',
+                     notificationContent: 'An error Occurred, Please try again',
+                     emailResult: false,
+                     formConfirmed: false,
+                  },
+                  () => {
+                     setTimeout(
+                        () =>
+                           this.setState({
+                              notificationTop: '-100%',
+                              notificationContent: '',
+                           }),
+                        3000
+                     );
+                  }
+               );
             }
          );
       e.target.reset();
@@ -231,30 +253,54 @@ class Content extends Component {
                <header>
                   <div className='container'>
                      <div className='header'>
+                        <div
+                           onClick={this.toggleNav}
+                           className={
+                              this.state.openNav ? 'burger close' : 'burger'
+                           }
+                        >
+                           <div className='line-1'></div>
+                           <div className='line-2'></div>
+                           <div className='line-3'></div>
+                        </div>
                         <div className='logo'>
                            <Link to='/'>
                               <img src={Logo} alt='Ade Farm Snail' />
                            </Link>
                         </div>
-                        <nav className='nav'>
-                           <ul>
-                              <li>
-                                 <Link to='/about-us'>About Us</Link>
-                              </li>
-                              <li>
-                                 <Link to='/our-products'>Our Products</Link>
-                              </li>
-                              <li>
-                                 <Link to='/farm'>Our Farm</Link>
-                              </li>
-                              <li>
-                                 <Link to='/contact'>Contact Us</Link>
-                              </li>
-                              <li className='order-now'>
-                                 <Link to='/order-now'>Order Now</Link>
-                              </li>
-                           </ul>
+                        <nav
+                           className={
+                              this.state.openNav
+                                 ? 'nav-links open'
+                                 : 'nav-links'
+                           }
+                        >
+                           <div className='nav'>
+                              <ul>
+                                 <li className='home-mobile'>
+                                    <Link to='/'>Home</Link>
+                                 </li>
+                                 <li>
+                                    <Link to='/about-us'>About Us</Link>
+                                 </li>
+                                 <li>
+                                    <Link to='/our-products'>Our Products</Link>
+                                 </li>
+                                 <li>
+                                    <Link to='/farm'>Our Farm</Link>
+                                 </li>
+                                 <li>
+                                    <Link to='/contact'>Contact Us</Link>
+                                 </li>
+                                 <li className='order-now'>
+                                    <Link to='/order-now'>Order Now</Link>
+                                 </li>
+                              </ul>
+                           </div>
                         </nav>
+                        <li className='order-now mobile'>
+                           <Link to='/order-now'>Order Now</Link>
+                        </li>
                      </div>
                   </div>
                </header>

@@ -27,7 +27,7 @@ class ProductForm extends Component {
                   {selectedProduct.map((product) => (
                      <div key={product.id} className='select'>
                         <select
-                           name={`noOfKilosOf${product.urlName}`}
+                           name='noOfKilos'
                            value={product.noOfKilos}
                            id='kilos'
                            onChange={handleKilosChange.bind(this, product.id)}

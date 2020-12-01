@@ -19,6 +19,10 @@ import Spinner from '../../layout/Spinner';
 
 import SlideShowTwo from './SlideShowTwo';
 
+import SuccessOrder from './SuccessOrder';
+
+import SpecialOccasion from '../../layout/SpecialOccasions';
+
 class Content extends Component {
    state = {
       products: [],
@@ -42,6 +46,9 @@ class Content extends Component {
       cardName: '',
       totalPrice: '',
       formConfirmed: false,
+      showSuccess: false,
+      emailResult: false,
+      openNav: false,
    };
 
    componentDidMount() {
@@ -49,6 +56,14 @@ class Content extends Component {
          .then((res) => res.json())
          .then((data) => this.setState({ products: data }));
    }
+
+   toggleNav = () => {
+      this.setState({ openNav: !this.state.openNav });
+   };
+
+   closeNav = () => {
+      this.setState({ openNav: !this.state.openNav });
+   };
 
    selectProduct = (name, img, id, urlName, unitPrice, noOfKilos, subTotal) => {
       this.setState(
@@ -302,7 +317,6 @@ class Content extends Component {
    // Handle Form Submit
    submitForm = (e) => {
       e.preventDefault();
-      console.log('tomiwa');
       this.setState({ formConfirmed: true });
 
       emailjs
@@ -314,13 +328,30 @@ class Content extends Component {
          )
          .then(
             (result) => {
-               console.log(result);
+               this.setState({ showSuccess: true, emailResult: false });
             },
             (error) => {
-               console.log(error);
+               this.setState(
+                  {
+                     notificationTop: '0%',
+                     notificationContent: 'An error Occurred, Please try again',
+                     notificationType: 'danger',
+                     emailResult: false,
+                     formConfirmed: false,
+                  },
+                  () => {
+                     setTimeout(
+                        () =>
+                           this.setState({
+                              notificationTop: '-100%',
+                              notificationContent: '',
+                           }),
+                        3000
+                     );
+                  }
+               );
             }
          );
-      e.target.reset();
    };
 
    showSpinner = () => {
@@ -346,144 +377,186 @@ class Content extends Component {
          address,
          totalPrice,
          cardName,
+         showSuccess,
       } = this.state;
-      return (
-         <div className='order-now-page'>
-            <header>
-               <div className='container'>
-                  <div className='header'>
-                     <div className='logo'>
-                        <Link to='/'>
-                           <img src={Logo} alt='Ade Farm Snail' />
-                        </Link>
+      if (!showSuccess) {
+         return (
+            <div className='order-now-page'>
+               <header>
+                  <div className='container'>
+                     <div className='header'>
+                        <div
+                           onClick={this.toggleNav}
+                           className={
+                              this.state.openNav ? 'burger close' : 'burger'
+                           }
+                        >
+                           <div className='line-1'></div>
+                           <div className='line-2'></div>
+                           <div className='line-3'></div>
+                        </div>
+                        <div className='logo'>
+                           <Link to='/'>
+                              <img src={Logo} alt='Ade Farm Snail' />
+                           </Link>
+                        </div>
+                        <nav
+                           className={
+                              this.state.openNav
+                                 ? 'nav-links open'
+                                 : 'nav-links'
+                           }
+                        >
+                           <div className='nav'>
+                              <ul>
+                                 <li className='home-mobile'>
+                                    <Link to='/'>Home</Link>
+                                 </li>
+                                 <li>
+                                    <Link to='/about-us'>About Us</Link>
+                                 </li>
+                                 <li>
+                                    <Link to='/our-products'>Our Products</Link>
+                                 </li>
+                                 <li>
+                                    <Link to='/farm'>Our Farm</Link>
+                                 </li>
+                                 <li>
+                                    <Link to='/contact'>Contact Us</Link>
+                                 </li>
+                                 <li className='order-now'>
+                                    <Link to='/order-now'>Order Now</Link>
+                                 </li>
+                              </ul>
+                           </div>
+                        </nav>
+                        <li className='order-now mobile'>
+                           <Link to='/order-now'>Order Now</Link>
+                        </li>
                      </div>
-                     <nav className='nav'>
-                        <ul>
-                           <li>
-                              <Link to='/about-us'>About Us</Link>
-                           </li>
-                           <li>
-                              <Link to='/our-products'>Our Products</Link>
-                           </li>
-                           <li>
-                              <Link to='/farm'>Our Farm</Link>
-                           </li>
-                           <li>
-                              <Link to='/contact'>Contact Us</Link>
-                           </li>
-                           <li className='order-now'>
-                              <Link to='/order-now'>Order Now</Link>
-                           </li>
-                        </ul>
-                     </nav>
                   </div>
-               </div>
-            </header>
-            <main>
-               <div className='showcase'>
-                  <img src={ShowcaseImg} alt='Snails' />
-                  <div className='intro'>
-                     <h1>Order Now</h1>
+               </header>
+               <main>
+                  <div className='showcase'>
+                     <img src={ShowcaseImg} alt='Snails' />
+                     <div className='intro'>
+                        <h1>Order Now</h1>
+                     </div>
                   </div>
-               </div>
-               <div className='products-slides'>
-                  <h3>Order Now</h3>
-                  <div className='slide-show'>
-                     <SlideShow />
+                  <div className='products-slides'>
+                     <h3>Order Now</h3>
+                     <div className='slide-show'>
+                        <SlideShow />
+                     </div>
                   </div>
-               </div>
-               <div className='order-form-section'>
-                  <form onSubmit={this.submitForm}>
-                     <h4>Fill Out your Order Form</h4>
-                     <div className='container'>
-                        <div className='form-container' id='form-container'>
-                           <OrderSelect
-                              products={products}
-                              selectProduct={this.selectProduct}
-                           />
-                           <ProductForm
-                              selectedProduct={selectedProduct}
-                              handleKilosChange={this.handleKilosChange}
-                              proceedCheckout={this.proceedCheckout}
-                           />
-                        </div>
-                        <div
-                           style={this.displayAddressSection()}
-                           className='address-section'
-                        >
-                           <Address
-                              firstName={firstName}
-                              lastName={lastName}
-                              email={email}
-                              mobile={mobile}
-                              city={city}
-                              state={state}
-                              country={country}
-                              address={address}
-                              changeAddress={this.changeAddress}
-                              addressSubmit={this.addressSubmit}
-                           />
-                        </div>
-                        <div
-                           style={this.displayOrderSummary()}
-                           className='order-summary-section'
-                        >
-                           <OrderSummary
-                              selectedProduct={selectedProduct}
-                              totalPrice={totalPrice}
-                           />
-                        </div>
-                        <div
-                           style={this.displayPaymentSection()}
-                           className='payment-section'
-                        >
-                           <Payment
-                              firstName={firstName}
-                              lastName={lastName}
-                              totalPrice={totalPrice}
-                              handleCardChange={this.handleCardChange}
-                              proceedNextStep={this.proceedNextStep}
-                           />
-                        </div>
-                        <div
-                           style={this.displayConfirmSection()}
-                           className='confirm-section'
-                        >
-                           <Confirm
-                              firstName={firstName}
-                              lastName={lastName}
-                              state={state}
-                              address={address}
-                              mobile={mobile}
-                              city={city}
-                              country={country}
-                              totalPrice={totalPrice}
-                              cardName={cardName}
-                              selectedProduct={selectedProduct}
-                           />
-                           <div className='submit-btn'>
-                              <button type='submit' className='btn btn-primary'>
-                                 Confirm Order
-                              </button>
+                  <div className='order-form-section'>
+                     <form onSubmit={this.submitForm}>
+                        <h4>Fill Out your Order Form</h4>
+                        <div className='container'>
+                           <div className='form-container' id='form-container'>
+                              <OrderSelect
+                                 products={products}
+                                 selectProduct={this.selectProduct}
+                              />
+                              <ProductForm
+                                 selectedProduct={selectedProduct}
+                                 handleKilosChange={this.handleKilosChange}
+                                 proceedCheckout={this.proceedCheckout}
+                              />
+                           </div>
+                           <div
+                              style={this.displayAddressSection()}
+                              className='address-section'
+                           >
+                              <Address
+                                 firstName={firstName}
+                                 lastName={lastName}
+                                 email={email}
+                                 mobile={mobile}
+                                 city={city}
+                                 state={state}
+                                 country={country}
+                                 address={address}
+                                 changeAddress={this.changeAddress}
+                                 addressSubmit={this.addressSubmit}
+                              />
+                           </div>
+                           <div
+                              style={this.displayOrderSummary()}
+                              className='order-summary-section'
+                           >
+                              <OrderSummary
+                                 selectedProduct={selectedProduct}
+                                 totalPrice={totalPrice}
+                              />
+                           </div>
+                           <div
+                              style={this.displayPaymentSection()}
+                              className='payment-section'
+                           >
+                              <Payment
+                                 firstName={firstName}
+                                 lastName={lastName}
+                                 totalPrice={totalPrice}
+                                 handleCardChange={this.handleCardChange}
+                                 proceedNextStep={this.proceedNextStep}
+                              />
+                           </div>
+                           <div
+                              style={this.displayConfirmSection()}
+                              className='confirm-section'
+                           >
+                              <Confirm
+                                 firstName={firstName}
+                                 lastName={lastName}
+                                 state={state}
+                                 address={address}
+                                 mobile={mobile}
+                                 city={city}
+                                 country={country}
+                                 totalPrice={totalPrice}
+                                 cardName={cardName}
+                                 selectedProduct={selectedProduct}
+                              />
+                              <div className='submit-btn'>
+                                 <button
+                                    type='submit'
+                                    className='btn btn-primary'
+                                 >
+                                    Confirm Order
+                                 </button>
+                              </div>
+                           </div>
+                           <div style={this.showSpinner()}>
+                              <Spinner />
                            </div>
                         </div>
-                        <div style={this.showSpinner()}>
-                           <Spinner />
+                        <div style={this.displaySlide()} className='slide-show'>
+                           <SlideShowTwo />
                         </div>
-                     </div>
-                     <div style={this.displaySlide()} className='slide-show'>
-                        <SlideShowTwo />
-                     </div>
-                  </form>
-               </div>
-            </main>
-            <Notifications
-               notificationContent={notificationContent}
-               top={notificationTop}
-               notificationType={notificationType}
+                     </form>
+                  </div>
+                  <div className='special-occasion'>
+                     <SpecialOccasion />
+                  </div>
+               </main>
+               <Notifications
+                  notificationContent={notificationContent}
+                  top={notificationTop}
+                  notificationType={notificationType}
+               />
+            </div>
+         );
+      } else {
+         return (
+            <SuccessOrder
+               firstName={firstName}
+               lastName={lastName}
+               email={email}
+               mobile={mobile}
             />
-         </div>
-      );
+         );
+      }
    }
 }
 
