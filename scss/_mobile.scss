@@ -568,17 +568,34 @@
             }
 
             .confirm-section {
-               margin: 1rem 0;
                .confirm-container {
+                  .confirm-details {
+                     .confirm-address {
+                        &-details {
+                           .head {
+                              h5 {
+                                 font-size: 0.8rem;
+                              }
+                           }
+
+                           .content {
+                              h5 {
+                                 font-size: 0.8rem;
+                              }
+
+                              p {
+                                 font-size: 0.7rem;
+                              }
+                           }
+                        }
+                     }
+                  }
+
                   .confirm-ordered {
                      &-details {
                         .head {
                            h5 {
-                              // font-size: 0.8rem;
-                           }
-                           a {
-                              padding: 0 1rem;
-                              cursor: pointer;
+                              font-size: 0.8rem;
                            }
                         }
 
@@ -587,7 +604,6 @@
 
                            .ordered-img {
                               width: 100%;
-                              height: 120px;
                               img {
                                  object-fit: cover;
                               }
@@ -607,6 +623,22 @@
                         }
                      }
                   }
+
+                  .confirm-bank {
+                     &-details {
+                        .head {
+                           h5 {
+                              font-size: 0.8rem;
+                           }
+                        }
+
+                        .content {
+                           h5 {
+                              font-size: 0.8rem;
+                           }
+                        }
+                     }
+                  }
                }
             }
          }
@@ -617,6 +649,118 @@
             height: 250px;
          }
       }
+   }
+
+   // Order Now Page
+   .order-now-page {
+      main {
+         .products-slides {
+            .slide-show {
+               .slide {
+                  height: 250px;
+               }
+            }
+         }
+
+         .order-form-section {
+            .order-summary-section {
+               .order-summary-details {
+                  .ordered-items {
+                     .ordered-item {
+                        .item-details {
+                           p {
+                              font-size: 0.7rem;
+                           }
+                        }
+                     }
+
+                     .btns {
+                        flex-direction: column;
+
+                        div,
+                        a {
+                           width: 100%;
+                           margin: 0.1rem 0;
+                        }
+                     }
+                  }
+               }
+            }
+
+            .confirm-section {
+               .confirm-container {
+                  .confirm-details {
+                     .confirm-address {
+                        &-details {
+                           .head {
+                              h5 {
+                                 font-size: 0.8rem;
+                              }
+                           }
+
+                           .content {
+                              h5 {
+                                 font-size: 0.8rem;
+                              }
+
+                              p {
+                                 font-size: 0.7rem;
+                              }
+                           }
+                        }
+                     }
+                  }
+
+                  .confirm-ordered {
+                     &-details {
+                        .head {
+                           h5 {
+                              font-size: 0.8rem;
+                           }
+                        }
+
+                        .content {
+                           h5 {
+                              font-size: 0.8rem;
+                           }
+
+                           p {
+                              font-size: 0.7rem;
+                           }
+                        }
+                     }
+                  }
+
+                  .confirm-bank {
+                     &-details {
+                        .head {
+                           h5 {
+                              font-size: 0.8rem;
+                           }
+                        }
+
+                        .content {
+                           h5 {
+                              font-size: 0.8rem;
+                           }
+                        }
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+   .slide-show {
+      .slide {
+         height: 250px;
+      }
+   }
+
+   // Btn
+   .btn {
+      font-size: 1.1rem;
+      padding: 0.5rem 1.2rem;
    }
 }
 
@@ -639,7 +783,7 @@
    }
 
    h5 {
-      font-size: 0.6;
+      font-size: 0.6rem;
    }
    // Header
    header {
@@ -680,5 +824,88 @@
    .btn {
       font-size: 1rem;
       padding: 0.5rem 1.3rem;
+   }
+}
+
+@media screen and (max-width: 320px) {
+   // Body
+   body {
+      font-size: 13px;
+   }
+
+   // Lead
+   .lead {
+      padding: 0.5rem 0.8rem;
+   }
+   // Font Sizes
+   h1 {
+      font-size: 1.6rem;
+   }
+
+   h2 {
+      font-size: 1.2rem;
+   }
+
+   h3 {
+      font-size: 0.9rem;
+   }
+
+   h4 {
+      font-size: 0.6rem;
+   }
+
+   h5 {
+      font-size: 0.5rem;
+   }
+   // Header
+   header {
+      .header {
+         .logo {
+            img {
+               width: 80px;
+               height: 80px;
+            }
+         }
+
+         .nav-links {
+            .nav {
+               ul {
+                  li {
+                     a {
+                        font-size: 14px;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+
+   // Btn
+   .btn {
+      font-size: 0.8rem;
+   }
+}
+
+@media screen and (max-width: 280px) {
+   // Font Sizes
+   h1 {
+      font-size: 1.4rem;
+   }
+
+   h2 {
+      font-size: 1.1rem;
+   }
+
+   h3 {
+      font-size: 0.8rem;
+   }
+
+   h4 {
+      font-size: 0.5rem;
+   }
+
+   h5 {
+      font-size: 0.4rem;
    }
 }

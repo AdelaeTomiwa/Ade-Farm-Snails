@@ -9,6 +9,10 @@ export default class About extends Component {
       openNav: false,
    };
 
+   componentDidMount() {
+      document.title = `Ade Farm Snails | About`;
+   }
+
    toggleNav = () => {
       this.setState({ openNav: !this.state.openNav });
    };
@@ -84,28 +88,28 @@ export default class About extends Component {
                      <div className='about'>
                         <h3>About</h3>
                         <p>
-                           <span className='text-primary'>Ade Farm Snail</span>,
-                           located in Oyo State, Nigeria, is the only snail
-                           company in the whole of Nigeria. Our snail breeding
-                           is completely hygienic and safe for everyone. We
-                           combine proven methods to snail farming and are able
-                           to supply quality and healthy snails to organizations
-                           and homes within and outside Nigeria.
+                           Located in Oyo State, Nigeria,{' '}
+                           <span className='text-primary'>Ade Farm Snail</span>{' '}
+                           is the only snail company in the whole of Nigeria.
+                           Our breeding of snails is completely hygienic and
+                           safe for all. We combine proven methods to snail
+                           farming and are able to supply quality and healthy
+                           snails to organizations and homes within and outside
+                           Nigeria.
                         </p>
                         <br />
                         <p>
-                           Due to our large farms all over Oyo state, we have a
-                           breeding capacity for one million snails per year. We
-                           are big suppliers to larger enterprises in Europe,
-                           India and United State of America. Do you have a
-                           special need for as many snails as possible?{' '}
+                           We have a breeding capacity of one million snails per
+                           year because of our large farms all over Oyo state.
+                           We are big suppliers to larger enterprises in Europe,
+                           India and United State of America. Is there a
+                           particular requirement for you to get as many snails
+                           as possible? Now{' '}
                            <Link to='/contact'>
-                              <span className='text-primary'>
-                                 Contact us now
-                              </span>
+                              <span className='text-primary'>Contact us</span>
                            </Link>
-                           . Our farms are located in several places in oyo
-                           state, Nigeria.
+                           . Our farms are located in Oyo State, Nigeria, in a
+                           variety of locations.
                         </p>
                      </div>
                      <div className='products'>
@@ -139,13 +143,14 @@ export default class About extends Component {
                         <h3>Our Farm</h3>
                         <p>
                            <span className='text-primary'>Ade farm snails</span>{' '}
-                           is a fully capable organization because we
-                           independent. This means that we do not depend on an
-                           external source for our snails. We produce our snail
-                           from our farm. We have three large farms where we
-                           raise and grow our snails. We use proven methods to
-                           snail farming and for that reason, we are able to
-                           produce quality, quantity and healthy snails.
+                           is a fully capable organization because we are
+                           independent. This means that we do not rely on an
+                           external source for our snails. From our farm, we
+                           produce our snails. We have three big farms where we
+                           breed our snails and grow them. For snail farming, we
+                           use proven methods and we are able to produce
+                           quality, quantity and healthy snails for that
+                           purpose.
                         </p>
                         <Link to='/farm'>
                            <button className='btn btn-primary'>

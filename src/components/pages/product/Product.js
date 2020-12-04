@@ -14,6 +14,7 @@ class Product extends Component {
                // eslint-disable-next-line
                if (item.id == this.props.match.params.id) {
                   this.setState({ product: item });
+
                   document.title = `Ade Farm Snails | ${this.state.product.name}`;
                } else {
                   return '';

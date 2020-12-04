@@ -9,6 +9,10 @@ export default class Contact extends Component {
       openNav: false,
    };
 
+   componentDidMount() {
+      document.title = `Ade Farm Snails | Contact`;
+   }
+
    toggleNav = () => {
       this.setState({ openNav: !this.state.openNav });
    };
@@ -83,9 +87,10 @@ export default class Contact extends Component {
                   <div className='container'>
                      <div className='contact'>
                         <h5>
-                           Do you have a special occasion where you need as many
-                           snail as possible? or do you have difficulty placing
-                           your order, please call us on the following number
+                           Do you need as many snails as possible for a
+                           particular occasion? If you are having difficulty
+                           placing your order, please contact us at the
+                           following number.
                         </h5>
                         <h3>
                            <span className='text-primary'>

@@ -60,8 +60,9 @@ class ItemSummary extends Component {
                   </div>
 
                   <small>
-                     Note: At Ade Farm Snails, We sell our products by kilo not
-                     by quantity. This is to your best interest and also ours
+                     Note: We market our goods by kilo, not by quantity, at Ade
+                     Farm Snails. This is in your best interest and also in our
+                     best interest.
                   </small>
                </div>
             </div>

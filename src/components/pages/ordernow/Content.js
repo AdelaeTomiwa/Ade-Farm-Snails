@@ -119,7 +119,7 @@ class Content extends Component {
                   () => {
                      this.setState({
                         notificationTop: '0%',
-                        notificationContent: `${name} has been Removed from your list`,
+                        notificationContent: `${name} has been removed from your list`,
                      });
                   }
                );
@@ -162,7 +162,8 @@ class Content extends Component {
          this.setState(
             {
                notificationTop: '0%',
-               notificationContent: `Please select at least One Product`,
+               notificationContent: `Please choose at
+               least one product. `,
                notificationType: 'danger',
             },
             () => {
@@ -216,7 +217,7 @@ class Content extends Component {
          this.setState(
             {
                notificationTop: '0%',
-               notificationContent: 'Please enter all fields',
+               notificationContent: 'Enter all fields, please',
                notificationType: 'danger',
             },
             () => {
@@ -274,7 +275,7 @@ class Content extends Component {
          this.setState(
             {
                notificationTop: '0%',
-               notificationContent: 'Please enter your Card Details',
+               notificationContent: 'Please enter the details of your card',
             },
             () => {
                setTimeout(

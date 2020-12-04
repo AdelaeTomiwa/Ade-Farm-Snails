@@ -24,31 +24,31 @@ class SlideShow extends Component {
          <Slider {...settings}>
             <Link to='/products/order/Fresh Snail/3'>
                <div className='slide'>
-                  <img src={Fresh} alt='' />
+                  <img src={Fresh} alt='Fresh Snail' />
                   <h4>Fresh Snail</h4>
                </div>
             </Link>
             <Link to='/products/order/Oven Dried Snail/2'>
                <div className='slide'>
-                  <img src={Oven} alt='' />
+                  <img src={Oven} alt='Oven Dried Snail' />
                   <h4>Oven Dried Snail</h4>
                </div>
             </Link>
             <Link to='/products/order/Grilled and Peppered Snail/1'>
                <div className='slide'>
-                  <img src={PepperedOne} alt='' />
+                  <img src={PepperedOne} alt='Grilled and Peppered Snail' />
                   <h4>Grilled and Peppered Snail</h4>
                </div>
             </Link>
             <Link to='/products/order/Live Snail/4'>
                <div className='slide'>
-                  <img src={Live} alt='' />
+                  <img src={Live} alt='Live Snail' />
                   <h4>Live Snail</h4>
                </div>
             </Link>
             <Link to='/products/order/Fresh Snail/3'>
                <div className='slide'>
-                  <img src={FreshTwo} alt='' />
+                  <img src={FreshTwo} alt='Fresh Snail' />
                   <h4>Fresh Snail</h4>
                </div>
             </Link>

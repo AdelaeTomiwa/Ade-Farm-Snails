@@ -8,7 +8,9 @@ export default class OrderSelect extends Component {
             <div className='products-list'>
                <div className='head'>
                   <h5>Products</h5>
-                  <small>Please Select the Products you want to Order</small>
+                  <small>
+                     Please pick the products that you'd like to order.{' '}
+                  </small>
                </div>
                <div className='select-list'>
                   {products.map((product) => (

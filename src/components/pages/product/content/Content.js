@@ -103,7 +103,7 @@ class Content extends Component {
          this.setState(
             {
                notificationTop: '0%',
-               notificationContent: 'Please enter all fields',
+               notificationContent: 'Enter all fields, please',
             },
             () => {
                setTimeout(
@@ -143,7 +143,7 @@ class Content extends Component {
          this.setState(
             {
                notificationTop: '0%',
-               notificationContent: 'Please enter your Card Details',
+               notificationContent: 'Please enter the details of your card',
             },
             () => {
                setTimeout(

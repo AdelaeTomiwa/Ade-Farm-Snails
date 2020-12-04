@@ -7,7 +7,7 @@ function Farm() {
          <h3>Our Farm</h3>
          <p>
             Our Snail breeding system at Ade’s farm snails is completely
-            hygienic and safe for everyone. we combine proven methods to snail
+            hygienic and safe for everyone. We combine proven methods to snail
             farming and are able to supply quality and healthy snails to
             organizations and homes within and outside Nigeria.
          </p>

@@ -11,6 +11,10 @@ class SuccessOrder extends Component {
       openNav: false,
    };
 
+   componentDidMount() {
+      document.title = `Ade Farm Snails | Success`;
+   }
+
    toggleNav = () => {
       this.setState({ openNav: !this.state.openNav });
    };
@@ -105,7 +109,7 @@ class SuccessOrder extends Component {
                                     ,
                                  </h4>
                                  <p>
-                                    Thank you for shopping with{' '}
+                                    Thank you so much for shopping with{' '}
                                     <strong className='text-primary'>
                                        Ade Farm Snails
                                     </strong>
@@ -113,20 +117,19 @@ class SuccessOrder extends Component {
                                     <strong className='text-primary'>
                                        {name}
                                     </strong>{' '}
-                                    has been successfully confirmed.{' '}
+                                    has been verified successfully.{' '}
                                     <span className='text-primary'>
                                        Ade Farm Snails
                                     </span>{' '}
-                                    has sent you an email on{' '}
+                                    has sent you an e-mail to{' '}
                                     <strong className='text-primary'>
                                        {email}
                                     </strong>{' '}
-                                    and will contact you shortly on{' '}
+                                    and will contact you on{' '}
                                     <strong className='text-primary'>
-                                       {mobile} when the payment has been
-                                       confirmed
+                                       {mobile} immediately after payment has
+                                       been verified.
                                     </strong>
-                                    .
                                  </p>
                               </div>
                               <div className='enquires'>

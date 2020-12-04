@@ -10,6 +10,10 @@ class OrderNow extends Component {
       products: [],
    };
 
+   componentDidMount() {
+      document.title = `Ade Farm Snails | Order Now`;
+   }
+
    render() {
       return (
          <Consumer>

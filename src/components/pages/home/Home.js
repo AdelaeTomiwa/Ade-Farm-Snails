@@ -20,6 +20,10 @@ class Home extends Component {
       openNav: false,
    };
 
+   componentDidMount() {
+      document.title = `Ade Farm Snails`;
+   }
+
    toggleNav = () => {
       this.setState({ openNav: !this.state.openNav });
    };
