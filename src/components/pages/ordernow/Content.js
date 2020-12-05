@@ -117,10 +117,25 @@ class Content extends Component {
                      ],
                   },
                   () => {
-                     this.setState({
-                        notificationTop: '0%',
-                        notificationContent: `${name} has been removed from your list`,
-                     });
+                     this.setState(
+                        {
+                           notificationTop: '0%',
+                           notificationContent: `${name} has been removed from your list`,
+                        },
+                        () => {
+                           if (this.state.selectedProduct < 1) {
+                              this.setState({
+                                 proceedCheckout: false,
+                                 proceedNextStep: false,
+                                 proceedOrder: false,
+                                 proceedPayment: false,
+                                 showSlide: false,
+                              });
+                           } else {
+                              return;
+                           }
+                        }
+                     );
                   }
                );
             }
