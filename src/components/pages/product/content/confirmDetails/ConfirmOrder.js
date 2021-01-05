@@ -30,10 +30,10 @@ class ConfirmOrder extends Component {
                </div>
                <div className='ordered-content'>
                   <h5>{name}</h5>
-                  <p>&#x20a6;{unitPrice}</p>
+                  <p>&#36;{unitPrice}</p>
                   <p>No of Kilos: {noOfKilos}</p>
                   <p className='total'>
-                     <strong>Total: &#x20a6;</strong>
+                     <strong>Total: &#36;</strong>
                      <input
                         type='text'
                         defaultValue={totalPrice}

@@ -80,25 +80,25 @@ class Content extends Component {
                   subTotal: unitPrice * noOfKilos,
                },
             ],
+            notificationTop: '0%',
+            notificationContent: `${name} has been added to your list`,
+            notificationType: 'success',
          },
          () => {
-            this.setState(
-               {
-                  notificationTop: '0%',
-                  notificationContent: `${name} has been added to your list`,
-                  notificationType: 'success',
-               },
-               () => {
-                  setTimeout(
-                     () =>
-                        this.setState({
-                           notificationTop: '-100%',
-                           notificationContent: ``,
-                        }),
-                     3000
-                  );
-               }
+            const totalPrice = this.state.selectedProduct.reduce(
+               (total, product) => total + product.subTotal,
+               0
             );
+            this.setState({ totalPrice }, () => {
+               setTimeout(
+                  () =>
+                     this.setState({
+                        notificationTop: '-100%',
+                        notificationContent: ``,
+                     }),
+                  3000
+               );
+            });
          }
       );
 
@@ -121,8 +121,18 @@ class Content extends Component {
                         {
                            notificationTop: '0%',
                            notificationContent: `${name} has been removed from your list`,
+                           notificationType: 'success',
                         },
                         () => {
+                           setTimeout(
+                              () =>
+                                 this.setState({
+                                    notificationTop: '-100%',
+                                    notificationContent: ``,
+                                 }),
+                              3000
+                           );
+
                            if (this.state.selectedProduct < 1) {
                               this.setState({
                                  proceedCheckout: false,
@@ -291,6 +301,7 @@ class Content extends Component {
             {
                notificationTop: '0%',
                notificationContent: 'Please enter the details of your card',
+               notificationType: 'danger',
             },
             () => {
                setTimeout(
@@ -337,10 +348,10 @@ class Content extends Component {
 
       emailjs
          .sendForm(
-            'service_euoqtqx',
-            'template_32lb2ql',
+            'service_nkrdozz',
+            'template_6acoe9m',
             e.target,
-            'user_7EaiqqPdmu9jRArXJGffh'
+            'user_BFJOk9Ra2wLAkJcyfydWS'
          )
          .then(
             (result) => {

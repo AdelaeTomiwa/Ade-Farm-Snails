@@ -19,11 +19,11 @@ export default class OrderSummary extends Component {
                         <div className='content'>
                            <h5>{product.name}</h5>
                            <p>No of Kilos: {product.noOfKilos}</p>
-                           <p>Unit Price: &#x20a6;{product.unitPrice}</p>
+                           <p>Unit Price: &#36;{product.unitPrice}</p>
                         </div>
                         <div className='sub-total'>
                            <h5>
-                              Sub Total: &#x20a6;
+                              Sub Total: &#36;
                               {product.subTotal}
                            </h5>
                         </div>
@@ -44,7 +44,7 @@ export default class OrderSummary extends Component {
                   </Link>
                   <div className='proceed-btn'>
                      <div className='btn btn-primary'>
-                        Total: &#x20a6;{totalPrice}
+                        Total: &#36;{totalPrice}
                      </div>
                   </div>
                </div>

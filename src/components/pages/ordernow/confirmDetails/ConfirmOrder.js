@@ -28,7 +28,7 @@ class ConfirmOrder extends Component {
                {selectedProduct.map((product) => (
                   <div className='product' key={product.id}>
                      <h5>{product.name}</h5>
-                     <p>&#x20a6;{product.unitPrice}</p>
+                     <p>&#36;{product.unitPrice}</p>
                      <p>No of Kilos: {product.noOfKilos}</p>
                   </div>
                ))}
@@ -36,7 +36,7 @@ class ConfirmOrder extends Component {
                <div className='proceed-btn'>
                   <div className='btn btn-primary'>
                      <p className='total'>
-                        <strong>Total: &#x20a6;</strong>
+                        <strong>Total: &#36;</strong>
                         <input
                            type='text'
                            defaultValue={totalPrice}

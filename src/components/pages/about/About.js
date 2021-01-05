@@ -90,12 +90,12 @@ export default class About extends Component {
                         <p>
                            Located in Oyo State, Nigeria,{' '}
                            <span className='text-primary'>Ade Farm Snail</span>{' '}
-                           is the only snail company in the whole of Nigeria.
-                           Our breeding of snails is completely hygienic and
-                           safe for all. We combine proven methods to snail
-                           farming and are able to supply quality and healthy
-                           snails to organizations and homes within and outside
-                           Nigeria.
+                           is one of the largest snail company in the whole of
+                           West Africa. Our breeding of snails is completely
+                           hygienic and safe for all. We combine proven methods
+                           to snail farming and are able to supply quality and
+                           healthy snails to organizations and homes within and
+                           outside Nigeria.
                         </p>
                         <br />
                         <p>

@@ -101,7 +101,7 @@ export default class Contact extends Component {
                         <h3>
                            Email us @
                            <span className='text-primary'>
-                              westminsterfarmltd@gmail.com
+                              support@adefarmsnail.com.ng
                            </span>
                         </h3>
                      </div>

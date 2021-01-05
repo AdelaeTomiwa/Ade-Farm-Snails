@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 import Logo from '../../../img/logo.png';
 import ShowcaseImg from '../../../img/farm-showcase.jpg';
-import FarmOne from '../../../img/farm-one.jpg';
+import FarmOne from '../../../img/farm-one.PNG';
+import FarmTwo from '../../../img/farm-two.PNG';
 
 import SlideShow from './SlideShow';
 
@@ -109,8 +110,7 @@ export default class Contact extends Component {
                         <h3>Feed</h3>
                         <p>
                            We have a unique formula with the combination of
-                           Pawpaw, Mango, Cucumber, Water Melon, Soursop, and
-                           Plantain at{' '}
+                           EggShell, Corn, Soya Beans, Soursop, and Plantain at{' '}
                            <span className='text-primary'>
                               Ade Farm Snails.{' '}
                            </span>
@@ -121,6 +121,10 @@ export default class Contact extends Component {
                            that promote their production by supplying vitamins,
                            proteins and calcium to them.
                         </p>
+                        <div className='img-container'>
+                           <img src={FarmTwo} alt='Our Snail Farm' />
+                        </div>
+                        <h5>Our Snail Farm</h5>
                      </div>
                   </div>
                   <div className='slide-show'>

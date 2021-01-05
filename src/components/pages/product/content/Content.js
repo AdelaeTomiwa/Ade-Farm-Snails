@@ -189,10 +189,10 @@ class Content extends Component {
 
       emailjs
          .sendForm(
-            'service_euoqtqx',
-            'template_d4i5pp4',
+            'service_nkrdozz',
+            'template_27e7b69',
             e.target,
-            'user_7EaiqqPdmu9jRArXJGffh'
+            'user_BFJOk9Ra2wLAkJcyfydWS'
          )
          .then(
             (result) => {
@@ -324,9 +324,7 @@ class Content extends Component {
                                  </h3>
                                  <p>{aboutDish}</p>
                                  <p>
-                                    <strong>
-                                       One Kilo: &#x20a6;{unitPrice}
-                                    </strong>
+                                    <strong>One Kilo: &#36;{unitPrice}</strong>
                                  </p>
                                  <p>
                                     <strong>Ingredients: {ingredients}</strong>

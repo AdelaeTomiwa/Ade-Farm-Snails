@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 function Social() {
    return (
@@ -7,15 +6,27 @@ function Social() {
          <h4>Join us on Social Media</h4>
 
          <div className='icons'>
-            <Link to='/'>
+            <a
+               href='https://web.facebook.com/ADE-FARM-Snails-104722844802818/sss'
+               target='_blank'
+               rel='noopener noreferrer'
+            >
                <i className='fab fa-facebook'></i>
-            </Link>
-            <Link to='/'>
+            </a>
+            <a
+               href='https://twitter.com/ade_farm'
+               target='_blank'
+               rel='noopener noreferrer'
+            >
                <i className='fab fa-twitter'></i>
-            </Link>
-            <Link to='/'>
+            </a>
+            <a
+               href='https://www.instagram.com/adefarmsnail/'
+               target='_blank'
+               rel='noopener noreferrer'
+            >
                <i className='fab fa-instagram'></i>
-            </Link>
+            </a>
          </div>
       </div>
    );

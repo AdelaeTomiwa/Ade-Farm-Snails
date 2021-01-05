@@ -16,7 +16,7 @@ class MainProduct extends Component {
                      </h3>
                      <p>{aboutDish}</p>
                      <p>
-                        <strong>One Kilo: &#x20a6;{unitPrice}</strong>
+                        <strong>One Kilo: &#36;{unitPrice}</strong>
                      </p>
                      <p>
                         <strong>Ingredients: {ingredients}</strong>

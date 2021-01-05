@@ -16,14 +16,14 @@ class OrderSummary extends Component {
                   <div className='summary-details'>
                      <h5>{name}</h5>
                      <p>
-                        <strong>Unit Price: &#x20a6;{unitPrice}</strong>
+                        <strong>Unit Price: &#36;{unitPrice}</strong>
                      </p>
                      <p>No of Kilos: {noOfKilos}</p>
                   </div>
                </div>
                <div className='btns'>
                   <button className='btn btn-light'>
-                     Total:&#x20a6;{noOfKilos * unitPrice}
+                     Total:&#36;{noOfKilos * unitPrice}
                   </button>
                   <Link
                      activeClass='active'
