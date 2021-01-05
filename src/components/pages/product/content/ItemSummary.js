@@ -27,7 +27,7 @@ class ItemSummary extends Component {
                      />
                   </div>
                   <div className='product-price'>
-                     <p>Unit Price: &#36;</p>
+                     <p>Unit Price: &#x20A6;</p>
                      <input
                         type='text'
                         name='unitPrice'

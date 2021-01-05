@@ -324,7 +324,9 @@ class Content extends Component {
                                  </h3>
                                  <p>{aboutDish}</p>
                                  <p>
-                                    <strong>One Kilo: &#36;{unitPrice}</strong>
+                                    <strong>
+                                       One Kilo: &#x20A6;{unitPrice}
+                                    </strong>
                                  </p>
                                  <p>
                                     <strong>Ingredients: {ingredients}</strong>

@@ -18,7 +18,7 @@ class PaymentDetails extends Component {
                   <h5>Payment Details</h5>
                   <div className='lead'>
                      Dear {firstName} {lastName}, please transfer a total of{' '}
-                     &#36;
+                     &#x20A6;
                      {unitPrice * noOfKilos} to either bank account provided
                   </div>
                   <div className='table'>

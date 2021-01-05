@@ -50,7 +50,7 @@ class ProductForm extends Component {
                   <h5>Unit Price</h5>
                   {selectedProduct.map((product) => (
                      <div key={product.id}>
-                        <p>&#36;</p>
+                        <p>&#x20A6;</p>
                         <input
                            type='text'
                            name='unitPrice'
